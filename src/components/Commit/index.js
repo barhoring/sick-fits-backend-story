@@ -1,7 +1,3 @@
-import React from "react";
-
-const Commit = () => {
-  return <div>COmmit!</div>;
-};
+import Commit from "./Commit";
 
 export default Commit;
