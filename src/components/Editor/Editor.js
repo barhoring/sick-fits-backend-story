@@ -5,28 +5,35 @@ import axios from "axios";
 const Editor = ({ filePath }) => {
   const [text, setText] = useState(null);
   // fetch the file from raw github
-  let isRendered = useRef(false);
+
+  const config = {
+    headers: {
+      "Content-Length": 0,
+      "Content-Type": "text/plain",
+    },
+    responseType: "text",
+  };
+
   useEffect(() => {
-    isRendered = true;
     axios
-      .get(filePath, { responseType: "text/plain" }, { responseType: "text" })
+      .get(filePath, config)
       .then(function (response) {
         // handle success
-        if (isRendered) {
-          if (typeof response.data == "object") {
-            debugger;
-            const unEscpaed = JSON.stringify(response.data).replace(/\"/g, `"`);
-            debugger;
-            setText(unEscpaed);
-            console.log("here");
-          } else {
-            setText(response.data);
-          }
+        if (typeof response.data == "object") {
+          // A bug in axios returns an object even when config sets response type for text
+          // This is why in the next line we turn the object into a string
+          const unEscpaed = JSON.stringify(response.data, null, "\t").replace(
+            /\"/g,
+            `"`
+          );
+          setText(unEscpaed);
+        } else {
+          setText(response.data);
         }
       })
       .catch(function (error) {
         // handle error
-        console.log("Error occured during axios request");
+        console.log("Error occured during axios request!");
         console.log(error);
       })
       .then(function () {
@@ -34,10 +41,7 @@ const Editor = ({ filePath }) => {
         console.log("End of axios request");
       });
   }, []);
-  if (typeof text == "object") {
-    console.log("fuck");
-    console.log(text);
-  }
+
   return (
     <>
       <div style={styles.root}>
