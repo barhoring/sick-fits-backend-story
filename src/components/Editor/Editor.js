@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import MonacoEditor from "@monaco-editor/react";
 import axios from "axios";
 
@@ -22,11 +22,8 @@ const Editor = ({ filePath }) => {
         if (typeof response.data == "object") {
           // A bug in axios returns an object even when config sets response type for text
           // This is why in the next line we turn the object into a string
-          const unEscpaed = JSON.stringify(response.data, null, "\t").replace(
-            /\"/g,
-            `"`
-          );
-          setText(unEscpaed);
+          const stringObject = JSON.stringify(response.data, null, "\t");
+          setText(stringObject);
         } else {
           setText(response.data);
         }
@@ -44,13 +41,13 @@ const Editor = ({ filePath }) => {
 
   return (
     <>
+      <h3>{getFileName(filePath)}</h3>
       <div style={styles.root}>
         Editor
         <MonacoEditor
           style={styles.editor}
           value={text || ""}
-          // to do: change language to extracted from file type
-          language={"json"}
+          language={getLanguage(filePath)}
         />
       </div>
     </>
@@ -60,11 +57,35 @@ const Editor = ({ filePath }) => {
 const styles = {
   root: {
     width: "90%",
-    height: "100vh",
+    height: "80vh",
     display: "flex",
     justifyContent: "space-between",
     padding: 20,
   },
+};
+
+// This code is more readable with if than switch IMO
+const getLanguage = (file) => {
+  const ext = getExt(file);
+  if (ext === "js") return "javascript";
+  if (ext === "json") return "json";
+  if (ext === "gitignore") return "gitignore";
+  if (ext === "html") return "html";
+  if (ext === "css") return "css";
+  if (ext === "md") return "markdown";
+  return "text";
+};
+
+const getExt = (file) => {
+  const index = file.lastIndexOf(".");
+  const ext = file.substring(index + 1, file.length);
+  return ext;
+};
+
+const getFileName = (file) => {
+  const index = file.lastIndexOf("/");
+  const name = file.substring(index + 1, file.length);
+  return name;
 };
 
 export default Editor;
