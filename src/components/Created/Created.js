@@ -7,7 +7,7 @@ const Created = ({ fileNames, hash }) => {
       {fileNames &&
         fileNames.map((file) => {
           const filePath = getFileUri(hash, file);
-          return <Editor filePath={filePath} />;
+          return <Editor key={filePath} filePath={filePath} />;
         })}
     </>
   );

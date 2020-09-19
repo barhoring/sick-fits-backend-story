@@ -41,7 +41,8 @@ const Editor = ({ filePath }) => {
 
   return (
     <>
-      <h3>{getFileName(filePath)}</h3>
+      <h2>{getFileName(filePath)}</h2>
+      <h3>{filePath}</h3>
       <div style={styles.root}>
         Editor
         <MonacoEditor

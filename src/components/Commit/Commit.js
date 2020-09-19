@@ -3,12 +3,23 @@ import { connect } from "react-redux";
 import Created from "../../components/Created";
 
 const Commit = ({ hash, data }) => {
-  const { filesAdded, authorName } = data;
+  const {
+    filesAdded,
+    filesModify,
+    filesDeleted,
+    filesRenamed,
+    authorName,
+  } = data;
   return (
     <>
       Commit<div>{JSON.stringify(data)}</div>
-      <h2>by {authorName}</h2>
-      <h5>{hash}</h5>
+      <h1>by {authorName}</h1>
+      <h3>Commit {hash}</h3>
+      <div>{filesAdded.length} files added</div>
+      <div>{filesModify.length} files modified</div>
+      <div>{filesDeleted.length} files deleted</div>
+      <div>{filesDeleted.length} files renamed</div>
+      <hr />
       <Created hash={hash} fileNames={filesAdded} />
     </>
   );
