@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import Created from "../../components/Created";
+import DiffEditor from "../../components/DiffEditor";
 
 const Commit = ({ hash, data }) => {
   const {
@@ -18,8 +19,11 @@ const Commit = ({ hash, data }) => {
       <div>{filesAdded.length} files added</div>
       <div>{filesModify.length} files modified</div>
       <div>{filesDeleted.length} files deleted</div>
-      <div>{filesDeleted.length} files renamed</div>
+      <div>{filesRenamed.length} files renamed</div>
       <hr />
+      <div style={{ height: "100vh" }}>
+        <DiffEditor />
+      </div>
       <Created hash={hash} fileNames={filesAdded} />
     </>
   );
