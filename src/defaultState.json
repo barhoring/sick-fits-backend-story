@@ -252,5 +252,7 @@
     "a2d80a8f546469cc88a70d0c0a0efbcbc47f97df",
     "0fad399e6d72433b21f762c81f70b7d92c777ee7",
     "fab16d93b4a3c16eb89ba8e136bec9e038bf8324"
-  ]
+  ],
+  "currentHashIndex": 0,
+  "prevHashIndex": null
 }

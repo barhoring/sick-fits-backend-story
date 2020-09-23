@@ -21,4 +21,9 @@ const getFileName = (file) => {
   return name;
 };
 
-export default { getLanguage, getExt, getFileName };
+const uri_format = `https://raw.githubusercontent.com/barhoring/Redux-course`;
+const getFileUri = (hash, fileName) => {
+  return `${uri_format}/${hash}/${fileName}`;
+};
+
+export default { getLanguage, getExt, getFileName, getFileUri };

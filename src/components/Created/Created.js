@@ -1,21 +1,17 @@
 import React from "react";
 import Editor from "../Editor";
+import { file as fileUtils } from "../../utils";
 
 const Created = ({ fileNames, hash }) => {
   return (
     <>
       {fileNames &&
         fileNames.map((file) => {
-          const filePath = getFileUri(hash, file);
+          const filePath = fileUtils.getFileUri(hash, file);
           return <Editor key={filePath} filePath={filePath} />;
         })}
     </>
   );
-};
-
-const uri_format = `https://raw.githubusercontent.com/barhoring/Redux-course`;
-const getFileUri = (hash, fileName) => {
-  return `${uri_format}/${hash}/${fileName}`;
 };
 
 export default Created;

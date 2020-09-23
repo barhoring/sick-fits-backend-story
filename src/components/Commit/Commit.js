@@ -32,7 +32,7 @@ const Commit = ({ hash, data }) => {
 // Baded on hash prop get the data for this commit
 function mapStateToProps(state, ownProps) {
   const { hash } = ownProps;
-  return { data: state.commits[hash] };
+  return { data: state.commits.commits[hash] };
 }
 
 export default connect(mapStateToProps)(Commit);

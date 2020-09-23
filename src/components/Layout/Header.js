@@ -6,7 +6,6 @@ debugger;
 const Header = () => {
   const classes = useStyles();
   const { isDarkMode, toggleDarkMode } = useContext(ThemeContext);
-  debugger;
   return (
     <section className={classes.section}>
       <h1>Gitty</h1>

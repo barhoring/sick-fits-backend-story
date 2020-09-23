@@ -1,5 +1,6 @@
 import { DiffEditor } from "./components";
 import React, { useState } from "react";
+import { CommitSelector } from "./components";
 import { connect } from "react-redux";
 import { Layout } from "./components";
 import "./App.css";
@@ -10,29 +11,16 @@ function App({ ids }) {
   return (
     <div className="App" style={{ width: "100%", height: "100%" }}>
       <div>
-        <select name="hashes" id="hashes">
-          {ids.map((id) => {
-            return (
-              <option
-                key={id}
-                value={id}
-                onClick={(e) => setHash(e.target.value)}
-              >
-                {id}
-              </option>
-            );
-          })}
-        </select>
+        <CommitSelector ids={ids} />
       </div>
       <Layout hash={hash} />
-      {/* <DiffEditor /> */}
-      {/* <Commit hash={hash} /> */}
     </div>
   );
 }
 
 const mapStateToProps = (state) => {
-  return { ids: state.ids };
+  debugger;
+  return { ids: state.commits.ids };
 };
 
 export default connect(mapStateToProps)(App);

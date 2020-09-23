@@ -1,7 +1,5 @@
-import state from "../defaultState.json";
+import { combineReducers } from "redux";
+import hashes from "./hash-reducer";
+import commits from "./commit-reducer";
 
-const rootReducer = (commits = state) => {
-  return state;
-};
-
-export default rootReducer;
+export default combineReducers({ commits, hashes });
