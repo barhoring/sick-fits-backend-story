@@ -1,7 +1,7 @@
 import { DiffEditor } from "./components";
 import React, { useState } from "react";
 import { connect } from "react-redux";
-import { Commit } from "./components";
+import { Layout } from "./components";
 import "./App.css";
 
 function App({ ids }) {
@@ -24,8 +24,9 @@ function App({ ids }) {
           })}
         </select>
       </div>
-      <DiffEditor />
-      <Commit hash={hash} />
+      <Layout hash={hash} />
+      {/* <DiffEditor /> */}
+      {/* <Commit hash={hash} /> */}
     </div>
   );
 }

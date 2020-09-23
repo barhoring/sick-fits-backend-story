@@ -1,9 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import MonacoEditor from "@monaco-editor/react";
 import axios from "axios";
 import { file as fileUtils } from "../../utils";
+import { ThemeContext } from "../../ThemeContext";
 
 const Editor = ({ filePath }) => {
+  const { isDarkMode } = useContext(ThemeContext);
   const [text, setText] = useState(null);
   // fetch the file from raw github
 
@@ -49,7 +51,7 @@ const Editor = ({ filePath }) => {
         <MonacoEditor
           // style={styles.editor}
           value={text || ""}
-          theme="dark"
+          theme={isDarkMode ? "dark" : "light"}
           language={fileUtils.getLanguage(filePath)}
         />
       </div>
