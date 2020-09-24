@@ -20,7 +20,6 @@ const CommitSelector = ({
               key={id}
               value={id}
               onClick={(e) => {
-                debugger;
                 const index = e.target.index;
                 hashhIndexGoTo(index);
               }}

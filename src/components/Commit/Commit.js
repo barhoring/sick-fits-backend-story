@@ -23,7 +23,8 @@ const Commit = ({ hash, data }) => {
       <div style={{ height: "100vh" }}>
         <DiffEditor />
       </div>
-      <Created hash={hash} fileNames={filesAdded} />
+      <Created />
+      {/* <Created hash={hash} fileNames={filesAdded} /> */}
     </>
   );
 };

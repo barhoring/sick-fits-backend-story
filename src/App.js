@@ -1,4 +1,3 @@
-import { DiffEditor } from "./components";
 import React, { useState } from "react";
 import { CommitSelectorContainer } from "./containers";
 import { connect } from "react-redux";

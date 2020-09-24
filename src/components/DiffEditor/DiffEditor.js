@@ -12,8 +12,11 @@ const DiffEditor = ({ modifiedFilePath, originalFilePath }) => {
   const [original, setOriginal] = useState(null);
   const [modified, setModified] = useState(null);
 
+  debugger;
+
   useEffect(() => {
     axios.all([modifiedFilePath, originalFilePath]).then((values) => {
+      debugger;
       console.log(values);
     });
   }, []);
