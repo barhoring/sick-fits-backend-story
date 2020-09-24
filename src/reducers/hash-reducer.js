@@ -9,6 +9,14 @@ const hashReducer = (state = defaultState, action) => {
       prevHashIndex: state.hashIndex,
     };
   }
+  if (action.type === "HASH_INDEX_GOTO") {
+    const { index } = action.payload;
+    const prevHashIndex = index - 1 > -1 ? index : null;
+    return {
+      hashIndex: index,
+      prevHashIndex,
+    };
+  }
   return state;
 };
 

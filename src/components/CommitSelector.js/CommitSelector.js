@@ -1,6 +1,12 @@
 import React from "react";
 
-const CommitSelector = ({ ids, currentHash, prevHash, incrementHashIndex }) => {
+const CommitSelector = ({
+  ids,
+  currentHash,
+  prevHash,
+  incrementHashIndex,
+  hashhIndexGoTo,
+}) => {
   return (
     <div>
       <select name="hashes" id="hashes">
@@ -10,8 +16,9 @@ const CommitSelector = ({ ids, currentHash, prevHash, incrementHashIndex }) => {
               key={id}
               value={id}
               onClick={(e) => {
-                console.log(incrementHashIndex);
-                console.log(e.target.value);
+                debugger;
+                const index = e.target.index;
+                hashhIndexGoTo(index);
               }}
             >
               {id}

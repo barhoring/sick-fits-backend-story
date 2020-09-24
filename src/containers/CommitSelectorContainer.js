@@ -1,8 +1,8 @@
 import { CommitSelector } from "../components";
 import { connect } from "react-redux";
-import { incrementHashIndex } from "../actions/hash-actions";
+import { incrementHashIndex, hashhIndexGoTo } from "../actions/hash-actions";
 
-const mapDispatchToProps = { incrementHashIndex };
+const mapDispatchToProps = { incrementHashIndex, hashhIndexGoTo };
 const mapStateToProps = (state) => {
   const { hashIndex, prevHashIndex } = state.hashes;
   return {
