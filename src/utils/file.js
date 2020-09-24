@@ -21,9 +21,10 @@ const getFileName = (file) => {
   return name;
 };
 
-const uri_format = `https://raw.githubusercontent.com/barhoring/Redux-course`;
+const uri_format = `https://raw.githubusercontent.com/barhoring`;
+const repoName = "reach-router";
 const getFileUri = (hash, fileName) => {
-  return `${uri_format}/${hash}/${fileName}`;
+  return `${uri_format}/${repoName}/${hash}/${fileName}`;
 };
 
 const objectToString = (obj) => {

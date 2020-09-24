@@ -47,7 +47,6 @@ const Editor = ({ filePath }) => {
       <h2>{fileUtils.getFileName(filePath)}</h2>
       <h3>{filePath}</h3>
       <div style={styles.root}>
-        Editor
         <MonacoEditor
           // style={styles.editor}
           value={text || ""}
@@ -61,10 +60,11 @@ const Editor = ({ filePath }) => {
 
 const styles = {
   root: {
-    width: "90%",
+    width: "100wh",
     height: "80vh",
     display: "flex",
     justifyContent: "space-between",
+    flexDirection: "column",
     padding: 20,
   },
 };

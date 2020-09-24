@@ -5,7 +5,6 @@ import { file as fileUtils } from "../../utils";
 const Modified = ({ filesModify, hash, prevHash }) => {
   return (
     <>
-      <div>modified!</div>
       {filesModify &&
         filesModify.map((file) => {
           const modifiedFilePath = fileUtils.getFileUri(hash, file);
