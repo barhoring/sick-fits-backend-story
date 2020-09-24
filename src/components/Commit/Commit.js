@@ -1,6 +1,9 @@
 import React from "react";
 import Created from "../../components/Created";
 import DiffEditor from "../../components/DiffEditor";
+import { DiffEditorContainer } from "../../containers";
+import Modified from "../Modified";
+import { ModifiedContainer } from "../../containers";
 
 const Commit = ({ hash, data }) => {
   const {
@@ -20,11 +23,12 @@ const Commit = ({ hash, data }) => {
       <div>{filesDeleted.length} files deleted</div>
       <div>{filesRenamed.length} files renamed</div>
       <hr />
+      {/* <Created /> */}
+      <ModifiedContainer />
       <div style={{ height: "100vh" }}>
-        <DiffEditor />
+        <DiffEditorContainer />
       </div>
-      <Created />
-      {/* <Created hash={hash} fileNames={filesAdded} /> */}
+      <Created hash={hash} fileNames={filesAdded} />
     </>
   );
 };

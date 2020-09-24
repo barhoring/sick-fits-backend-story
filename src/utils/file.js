@@ -26,4 +26,8 @@ const getFileUri = (hash, fileName) => {
   return `${uri_format}/${hash}/${fileName}`;
 };
 
-export default { getLanguage, getExt, getFileName, getFileUri };
+const objectToString = (obj) => {
+  return JSON.stringify(obj, null, "\t");
+};
+
+export default { getLanguage, getExt, getFileName, getFileUri, objectToString };
