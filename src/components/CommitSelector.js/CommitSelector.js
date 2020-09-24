@@ -2,6 +2,7 @@ import React from "react";
 
 const CommitSelector = ({
   ids,
+  hashIndex,
   currentHash,
   prevHash,
   incrementHashIndex,
@@ -9,8 +10,11 @@ const CommitSelector = ({
 }) => {
   return (
     <div>
-      <select name="hashes" id="hashes">
-        {ids.map((id) => {
+      <div>
+        hashIndex: {hashIndex} {currentHash}
+      </div>
+      <select name="hashes" id="hashes" value={currentHash}>
+        {ids.map((id, index) => {
           return (
             <option
               key={id}
@@ -28,7 +32,12 @@ const CommitSelector = ({
       </select>
       <h1>Current Commit: {currentHash}</h1>
       <div>Previous Commit: {prevHash}</div>
-      <button onClick={incrementHashIndex}>Next Commit</button>
+      <button
+        onClick={incrementHashIndex}
+        disabled={hashIndex === ids.length - 1 ? true : false}
+      >
+        Next Commit
+      </button>
     </div>
   );
 };
