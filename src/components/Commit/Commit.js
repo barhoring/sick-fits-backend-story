@@ -1,5 +1,4 @@
 import React from "react";
-import { connect } from "react-redux";
 import Created from "../../components/Created";
 import DiffEditor from "../../components/DiffEditor";
 
@@ -29,10 +28,4 @@ const Commit = ({ hash, data }) => {
   );
 };
 
-// Baded on hash prop get the data for this commit
-function mapStateToProps(state, ownProps) {
-  const { hash } = ownProps;
-  return { data: state.commits.commits[hash] };
-}
-
-export default connect(mapStateToProps)(Commit);
+export default Commit;

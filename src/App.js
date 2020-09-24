@@ -1,6 +1,6 @@
 import { DiffEditor } from "./components";
 import React, { useState } from "react";
-import { CommitSelector } from "./components";
+import { CommitSelectorContainer } from "./containers";
 import { connect } from "react-redux";
 import { Layout } from "./components";
 import "./App.css";
@@ -11,7 +11,7 @@ function App({ ids }) {
   return (
     <div className="App" style={{ width: "100%", height: "100%" }}>
       <div>
-        <CommitSelector ids={ids} />
+        <CommitSelectorContainer ids={ids} />
       </div>
       <Layout hash={hash} />
     </div>
@@ -19,7 +19,6 @@ function App({ ids }) {
 }
 
 const mapStateToProps = (state) => {
-  debugger;
   return { ids: state.commits.ids };
 };
 
