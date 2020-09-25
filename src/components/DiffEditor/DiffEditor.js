@@ -46,6 +46,7 @@ const DiffEditor = ({
   return (
     <div className={classes.root}>
       <MonacoDiffEditor
+        options={{ renderSideBySide: false }}
         theme={isDarkMode ? "dark" : "light"}
         original={originalText || examples.original}
         modified={modifiedText || examples.modified}

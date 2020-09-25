@@ -11,6 +11,14 @@ const useStyles = makeStyles((theme) => ({
   gitty: {
     fontFamily: "Damion",
   },
+  brief: {
+    fontFamily: "Covered By Your Grace",
+  },
+  flex: {
+    display: "flex",
+  },
+  vertical: { flexDirection: "column" },
+  horizontal: { flexDirection: "row" },
 }));
 
 export default useStyles;
