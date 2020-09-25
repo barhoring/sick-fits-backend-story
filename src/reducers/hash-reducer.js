@@ -15,6 +15,25 @@ const hashReducer = (state = defaultState, action) => {
       prevHashIndex,
     };
   }
+  if (action.type === "HASH_SET") {
+    debugger;
+    const { hash } = action.payload;
+
+    const { ids } = state;
+    let newIndex = null;
+    for (const [i, value] of ids.entries()) {
+      console.log("%d: %s", i, value);
+      if (value === hash) {
+        newIndex = i;
+        console.log("found!");
+      }
+    }
+    return {
+      ids,
+      hashIndex: newIndex,
+      prevHashIndex: newIndex - 1,
+    };
+  }
 
   return state;
 };
