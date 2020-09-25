@@ -1,3 +1,4 @@
+import { StylesContext } from "@material-ui/styles";
 import React, { useContext } from "react";
 import { ThemeContext } from "../../ThemeContext";
 import useStyles from "./useStyles";
@@ -7,7 +8,7 @@ const Header = () => {
   const { isDarkMode, toggleDarkMode } = useContext(ThemeContext);
   return (
     <section className={classes.section}>
-      <h1>Gitty</h1>
+      <h1 className={classes.gitty}>Gitty</h1>
       <div>(Header)</div>
       {isDarkMode ? <div>Dark </div> : <div>light </div>}
       <button onClick={toggleDarkMode}>Dark Mode</button>

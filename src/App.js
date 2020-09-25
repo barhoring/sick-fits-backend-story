@@ -9,9 +9,6 @@ function App({ ids }) {
   console.log(hash);
   return (
     <div className="App" style={{ width: "100%", height: "100%" }}>
-      <div>
-        <CommitSelectorContainer ids={ids} />
-      </div>
       <Layout hash={hash} />
     </div>
   );

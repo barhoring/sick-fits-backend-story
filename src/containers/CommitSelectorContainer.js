@@ -9,6 +9,7 @@ const mapStateToProps = (state) => {
     currentHash: state.commits.ids[hashIndex],
     prevHash: state.commits.ids[prevHashIndex],
     hashIndex,
+    ids: state.commits.ids,
   };
 };
 

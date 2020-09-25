@@ -8,6 +8,9 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: "row",
     backgroundColor: "salmon",
   },
+  gitty: {
+    fontFamily: "Damion",
+  },
 }));
 
 export default useStyles;
