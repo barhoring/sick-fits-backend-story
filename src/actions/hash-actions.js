@@ -1,5 +1,6 @@
 const HASH_INDEX_INCREMENT = "HASH_INDEX_INCREMENT";
 const HASH_INDEX_GOTO = "HASH_INDEX_GOTO";
+const HASH_SET = "HASH_SET";
 
 export const incrementHashIndex = () => {
   return {
@@ -11,5 +12,14 @@ export const hashhIndexGoTo = (index) => {
   return {
     type: HASH_INDEX_GOTO,
     payload: { index },
+  };
+};
+
+export const hashSet = (hash) => {
+  return {
+    type: HASH_SET,
+    payload: {
+      hash,
+    },
   };
 };

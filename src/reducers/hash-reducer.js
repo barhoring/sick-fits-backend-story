@@ -1,7 +1,5 @@
-const defaultState = {
-  hashIndex: 0,
-  prevHashIndex: null,
-};
+import defaultState from "../hashDefaultState.json";
+
 const hashReducer = (state = defaultState, action) => {
   if (action.type === "HASH_INDEX_INCREMENT") {
     return {
@@ -17,6 +15,7 @@ const hashReducer = (state = defaultState, action) => {
       prevHashIndex,
     };
   }
+
   return state;
 };
 

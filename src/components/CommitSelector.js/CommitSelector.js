@@ -1,4 +1,12 @@
 import React from "react";
+import {
+  InputLabel,
+  FormControl,
+  Select,
+  MenuItem,
+  FormHelperText,
+} from "@material-ui/core/";
+import useStyles from "./useStyles";
 
 const CommitSelector = ({
   ids,
@@ -7,7 +15,9 @@ const CommitSelector = ({
   prevHash,
   incrementHashIndex,
   hashhIndexGoTo,
+  hashSet,
 }) => {
+  const classes = useStyles();
   return (
     <div>
       <div>
@@ -29,6 +39,30 @@ const CommitSelector = ({
           );
         })}
       </select>
+
+      <FormControl className={classes.formControl}>
+        <InputLabel id="demo-simple-select-helper-label">Age</InputLabel>
+        <Select
+          labelId="demo-simple-select-helper-label"
+          id="demo-simple-select-helper"
+          value={hashIndex}
+          onChange={(e) => {
+            hashSet(e.target.value);
+            console.log(e);
+            debugger;
+          }}
+        >
+          {ids.map((id, index) => {
+            return (
+              <MenuItem index={index} value={id}>
+                {id.slice(0, 10)}
+              </MenuItem>
+            );
+          })}
+        </Select>
+        <FormHelperText>Some important helper text</FormHelperText>
+      </FormControl>
+
       <h1>Current Commit: {currentHash}</h1>
       <div>Previous Commit: {prevHash}</div>
       <button
