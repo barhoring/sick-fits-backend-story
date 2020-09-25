@@ -1,10 +1,10 @@
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from "@material-ui/core/styles";
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   root: {
-    width: '100%',
-    height: '88%',
-    display: 'flex',
+    width: "100%",
+    height: "70%",
+    display: "flex",
     marginTop: 20,
     marginBottom: 20,
   },

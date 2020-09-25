@@ -6,13 +6,15 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     justifyContent: "space-around",
     flexDirection: "row",
-    backgroundColor: "salmon",
+    backgroundColor: "white",
   },
   gitty: {
     fontFamily: "Damion",
+    color: "salmon",
   },
   brief: {
     fontFamily: "Covered By Your Grace",
+    color: "",
   },
   flex: {
     display: "flex",

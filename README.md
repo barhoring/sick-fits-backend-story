@@ -8,6 +8,11 @@
 - [ ] Add monaco editor themes
 - [ ] Add colors palette
 - [ ] prettify Header compomnent
+- [ ] Add default settings
+
+## Next steps
+
+- [ ] Incorprate this PWA app [react-pwa.surenatoyan.com](https://react-pwa.surenatoyan.com/page-2) [github](https://github.com/suren-atoyan/react-pwa)
 
 <details>
 <summary>How do I dropdown?</summary>

@@ -1,4 +1,5 @@
 import { StylesContext } from "@material-ui/styles";
+import { FormControlLabel, Switch } from "@material-ui/core/";
 import React, { useContext } from "react";
 import { ThemeContext } from "../../ThemeContext";
 import Typography from "@material-ui/core/Typography";
@@ -10,14 +11,24 @@ const Header = () => {
   return (
     <section className={classes.section}>
       <div className="flex vertical">
-        <Typography className={classes.gitty} variant="h1" gutterBottom>
+        <Typography className={classes.gitty} variant="h1">
           Gitty
         </Typography>
-        <h2 className={classes.brief}>Wow, I finally get it!</h2>
+        <Typography className={classes.brief} variant="h6" gutterBottom>
+          I finally get it!
+        </Typography>
       </div>
-      <div>(Header)</div>
-      {isDarkMode ? <div>Dark </div> : <div>light </div>}
-      <button onClick={toggleDarkMode}>Dark Mode</button>
+
+      <FormControlLabel
+        control={
+          <Switch
+            checked={isDarkMode}
+            onChange={toggleDarkMode}
+            name="darkMode"
+          />
+        }
+        label={isDarkMode ? "Dark" : "light"}
+      />
     </section>
   );
 };
