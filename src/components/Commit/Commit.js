@@ -1,5 +1,7 @@
 import React from "react";
 import Created from "../../components/Created";
+import CommitStats from "../CommitStats";
+
 import { ModifiedContainer } from "../../containers";
 
 const Commit = ({ hash, data }) => {
@@ -14,6 +16,7 @@ const Commit = ({ hash, data }) => {
     <>
       <h1>by {authorName}</h1>
       <h3>Commit {hash}</h3>
+      <CommitStats />
       <div>{filesAdded.length} files added</div>
       <div>{filesModify.length} files modified</div>
       <div>{filesDeleted.length} files deleted</div>
