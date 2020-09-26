@@ -1,10 +1,18 @@
 const HASH_INDEX_INCREMENT = "HASH_INDEX_INCREMENT";
+const HASH_INDEX_DECREMENT = "HASH_INDEX_DECREMENT";
 const HASH_INDEX_GOTO = "HASH_INDEX_GOTO";
 const HASH_SET = "HASH_SET";
 
 export const incrementHashIndex = () => {
   return {
     type: HASH_INDEX_INCREMENT,
+  };
+};
+
+export const decrementHashIndex = () => {
+  debugger;
+  return {
+    type: HASH_INDEX_DECREMENT,
   };
 };
 

@@ -1,10 +1,19 @@
 import defaultState from "../hashDefaultState.json";
 
 const hashReducer = (state = defaultState, action) => {
+  debugger;
   if (action.type === "HASH_INDEX_INCREMENT") {
     return {
       hashIndex: state.hashIndex + 1,
       prevHashIndex: state.hashIndex,
+      ids: state.ids,
+    };
+  }
+  if (action.type === "HASH_INDEX_DECREMENT") {
+    return {
+      hashIndex: state.hashIndex - 1,
+      prevHashIndex: state.hashIndex,
+      ids: state.ids,
     };
   }
   if (action.type === "HASH_INDEX_GOTO") {
@@ -16,7 +25,6 @@ const hashReducer = (state = defaultState, action) => {
     };
   }
   if (action.type === "HASH_SET") {
-    debugger;
     const { hash } = action.payload;
 
     const { ids } = state;

@@ -7,6 +7,11 @@ const useStyles = makeStyles((theme) => ({
   selectEmpty: {
     marginTop: theme.spacing(2),
   },
+  root: {
+    "& > *": {
+      margin: theme.spacing(1),
+    },
+  },
 }));
 
 export default useStyles;

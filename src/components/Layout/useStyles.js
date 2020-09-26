@@ -11,6 +11,7 @@ const useStyles = makeStyles((theme) => ({
   gitty: {
     fontFamily: "Damion",
     color: "salmon",
+    // fontSize: "2rem",
   },
   brief: {
     fontFamily: "Covered By Your Grace",

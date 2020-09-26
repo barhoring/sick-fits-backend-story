@@ -2,11 +2,17 @@ import { CommitSelector } from "../components";
 import { connect } from "react-redux";
 import {
   incrementHashIndex,
+  decrementHashIndex,
   hashhIndexGoTo,
   hashSet,
 } from "../actions/hash-actions";
 
-const mapDispatchToProps = { incrementHashIndex, hashhIndexGoTo, hashSet };
+const mapDispatchToProps = {
+  incrementHashIndex,
+  hashhIndexGoTo,
+  hashSet,
+  decrementHashIndex,
+};
 const mapStateToProps = (state) => {
   const { hashIndex, prevHashIndex } = state.hashes;
   return {

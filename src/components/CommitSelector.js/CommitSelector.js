@@ -1,5 +1,6 @@
 import React from "react";
 import {
+  Button,
   InputLabel,
   FormControl,
   Select,
@@ -14,42 +15,26 @@ const CommitSelector = ({
   currentHash,
   prevHash,
   incrementHashIndex,
+  decrementHashIndex,
   hashhIndexGoTo,
   hashSet,
 }) => {
   const classes = useStyles();
   return (
     <div>
-      <div>
-        hashIndex: {hashIndex} {currentHash}
-      </div>
-      <select name="hashes" id="hashes" value={currentHash}>
-        {ids.map((id, index) => {
-          return (
-            <option
-              key={id}
-              value={id}
-              onClick={(e) => {
-                const index = e.target.index;
-                hashhIndexGoTo(index);
-              }}
-            >
-              {id}
-            </option>
-          );
-        })}
-      </select>
-
       <FormControl className={classes.formControl}>
-        <InputLabel id="demo-simple-select-helper-label">Age</InputLabel>
+        <InputLabel
+          id="demo-simple-select-helper-label"
+          style={{ fontSize: "2rem" }}
+        >
+          Commit
+        </InputLabel>
         <Select
           labelId="demo-simple-select-helper-label"
           id="demo-simple-select-helper"
-          value={hashIndex}
+          value={currentHash}
           onChange={(e) => {
             hashSet(e.target.value);
-            console.log(e);
-            debugger;
           }}
         >
           {ids.map((id, index) => {
@@ -62,15 +47,26 @@ const CommitSelector = ({
         </Select>
         <FormHelperText>Some important helper text</FormHelperText>
       </FormControl>
-
       <h1>Current Commit: {currentHash}</h1>
       <div>Previous Commit: {prevHash}</div>
-      <button
-        onClick={incrementHashIndex}
-        disabled={hashIndex === ids.length - 1 ? true : false}
-      >
-        Next Commit
-      </button>
+      <div className={classes.root}>
+        <Button
+          onClick={decrementHashIndex}
+          disabled={hashIndex === 0 ? true : false}
+          color="primary"
+          variant="contained"
+        >
+          Previous Commit
+        </Button>
+        <Button
+          onClick={incrementHashIndex}
+          disabled={hashIndex === ids.length - 1 ? true : false}
+          color="primary"
+          variant="contained"
+        >
+          Next Commit
+        </Button>
+      </div>
     </div>
   );
 };

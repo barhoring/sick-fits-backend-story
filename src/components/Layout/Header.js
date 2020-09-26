@@ -14,7 +14,7 @@ const Header = () => {
         <Typography className={classes.gitty} variant="h1">
           Gitty
         </Typography>
-        <Typography className={classes.brief} variant="h6" gutterBottom>
+        <Typography className={classes.brief} variant="h3" gutterBottom>
           I finally get it!
         </Typography>
       </div>
