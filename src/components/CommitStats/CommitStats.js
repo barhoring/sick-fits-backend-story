@@ -1,11 +1,15 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import Card from "@material-ui/core/Card";
-import CardActions from "@material-ui/core/CardActions";
-import CardContent from "@material-ui/core/CardContent";
-import Button from "@material-ui/core/Button";
-import Typography from "@material-ui/core/Typography";
-import { Paper } from "@material-ui/core";
+import {
+  Button,
+  Card,
+  CardActions,
+  CardContent,
+  Paper,
+  Typography,
+  makeStyles,
+} from "@material-ui/core";
+import GitHubIcon from "@material-ui/icons/GitHub";
+import { file as fileUtils } from "../../utils";
 
 const useStyles = makeStyles({
   paper: {
@@ -39,6 +43,7 @@ const CommitStats = ({
 }) => {
   const classes = useStyles();
   const bull = <span className={classes.bullet}>•</span>;
+  const commitGithubLink = fileUtils.getGithubCommitLink(hash);
 
   return (
     <Paper className={`${classes.paper} flex center`} elevation={3}>
@@ -55,33 +60,34 @@ const CommitStats = ({
             by {authorName}
           </Typography>
           <Typography className={classes.pos} color="textSecondary">
-            adjective
+            on September 12, 1991
           </Typography>
-          <div
-            className="flex vertical"
-            style={{ alignItems: "flex-start", border: "2px solid" }}
-          >
-            <Typography variant="h5" component="h2">
-              {bull} {numFilesAdded} files added
-            </Typography>
-            <Typography variant="h5" component="h2">
-              {bull} {numFilesModified} files modified
-            </Typography>
-            <Typography variant="h5" component="h2">
-              {bull} {numFilesDeleted} files deleted
-            </Typography>
-            <Typography variant="h5" component="h2">
-              {bull} {numFilesRenamed} files renamed
-            </Typography>
+          <div className="flex center">
+            <div className="flex vertical" style={{ alignItems: "flex-start" }}>
+              <Typography variant="h5" component="h2">
+                {bull} {numFilesAdded} files added
+              </Typography>
+              <Typography variant="h5" component="h2">
+                {bull} {numFilesModified} files modified
+              </Typography>
+              <Typography variant="h5" component="h2">
+                {bull} {numFilesDeleted} files deleted
+              </Typography>
+              <Typography variant="h5" component="h2">
+                {bull} {numFilesRenamed} files renamed
+              </Typography>
+            </div>
           </div>
-          <Typography variant="body2" component="p">
-            well meaning and kindly.
-            <br />
-            {'"a benevolent smile"'}
-          </Typography>
         </CardContent>
-        <CardActions>
-          <Button size="small">Learn More</Button>
+        <CardActions style={{ justifyContent: "center" }}>
+          <Button
+            size="small"
+            target="_blank"
+            rel="noopener noreferrer"
+            href={commitGithubLink}
+          >
+            <GitHubIcon style={{ fontSize: "4rem" }} color="primary" />
+          </Button>
         </CardActions>
       </Card>
     </Paper>

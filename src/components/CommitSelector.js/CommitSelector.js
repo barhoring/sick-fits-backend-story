@@ -47,8 +47,6 @@ const CommitSelector = ({
         </Select>
         <FormHelperText>Some important helper text</FormHelperText>
       </FormControl>
-      <h1>Current Commit: {currentHash}</h1>
-      <div>Previous Commit: {prevHash}</div>
       <div className={classes.root}>
         <Button
           onClick={decrementHashIndex}

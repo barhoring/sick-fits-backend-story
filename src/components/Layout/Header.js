@@ -14,12 +14,16 @@ const Header = () => {
         <Typography className={classes.gitty} variant="h1">
           Gitty
         </Typography>
-        <Typography className={classes.brief} variant="h3" gutterBottom>
-          I finally get it!
+        <Typography variant="h6" gutterBottom>
+          A better way to understand code
         </Typography>
+        {/* <Typography className={classes.brief} variant="h3" gutterBottom>
+          I finally get it!
+        </Typography> */}
       </div>
 
       <FormControlLabel
+        style={{ right: "1rem", position: "absolute" }}
         control={
           <Switch
             checked={isDarkMode}

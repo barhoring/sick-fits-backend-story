@@ -29,8 +29,20 @@ const getFileUri = (hash, fileName) => {
   return uri;
 };
 
+const githubCommitLink = `https://github.com/barhoring/reach-router/tree`;
+const getGithubCommitLink = (hash) => {
+  return `${githubCommitLink}/${hash}`;
+};
+
 const objectToString = (obj) => {
   return JSON.stringify(obj, null, "\t");
 };
 
-export default { getLanguage, getExt, getFileName, getFileUri, objectToString };
+export default {
+  getLanguage,
+  getExt,
+  getFileName,
+  getFileUri,
+  objectToString,
+  getGithubCommitLink,
+};

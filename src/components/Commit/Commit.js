@@ -26,15 +26,7 @@ const Commit = ({ hash, data }) => {
 
   return (
     <>
-      <h1>by {authorName}</h1>
-      <h3>Commit {hash}</h3>
       <CommitStats {...{ ...stats, hash, authorName }} />
-      <div>{filesAdded.length} files added</div>
-      <div>{filesModify.length} files modified</div>
-      <div>{filesDeleted.length} files deleted</div>
-      <div>{filesRenamed.length} files renamed</div>
-      <hr />
-      {/* <Created /> */}
       <ModifiedContainer />
       <Created hash={hash} fileNames={filesAdded} />
     </>
