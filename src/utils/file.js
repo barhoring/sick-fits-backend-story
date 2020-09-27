@@ -24,7 +24,9 @@ const getFileName = (file) => {
 const uri_format = `https://raw.githubusercontent.com/barhoring`;
 const repoName = "reach-router";
 const getFileUri = (hash, fileName) => {
-  return `${uri_format}/${repoName}/${hash}/${fileName}`;
+  const uri = `${uri_format}/${repoName}/${hash}/${fileName}`;
+  debugger;
+  return uri;
 };
 
 const objectToString = (obj) => {

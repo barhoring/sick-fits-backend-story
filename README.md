@@ -1,13 +1,15 @@
 #Gitty
 
 - [ ] Each Editor (regular or diff) should be able to derive its filePath
+- [ ] Commit (derive hash, prevHash) Created Modified
+- [ ] Make paper background color grey from palette
+- [ ] prettify Header compomnent
 - [ ] Add Modified files
 - [ ] Add Material UI
-  - [ ] Drop down for selecting commit
+  - [x] Drop down for selecting commit
 - [ ] Add dark theme
 - [ ] Add monaco editor themes
 - [ ] Add colors palette
-- [ ] prettify Header compomnent
 - [ ] Add default settings
 
 ## Next steps

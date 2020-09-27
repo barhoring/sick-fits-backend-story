@@ -12,11 +12,23 @@ const Commit = ({ hash, data }) => {
     filesRenamed,
     authorName,
   } = data;
+
+  const numFilesAdded = filesAdded.length;
+  const numFilesModified = filesModify.length;
+  const numFilesDeleted = filesDeleted.length;
+  const numFilesRenamed = filesRenamed.length;
+  const stats = {
+    numFilesAdded,
+    numFilesModified,
+    numFilesDeleted,
+    numFilesRenamed,
+  };
+
   return (
     <>
       <h1>by {authorName}</h1>
       <h3>Commit {hash}</h3>
-      <CommitStats />
+      <CommitStats {...{ ...stats, hash, authorName }} />
       <div>{filesAdded.length} files added</div>
       <div>{filesModify.length} files modified</div>
       <div>{filesDeleted.length} files deleted</div>
