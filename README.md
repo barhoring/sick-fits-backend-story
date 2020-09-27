@@ -11,6 +11,7 @@
 - [ ] Add monaco editor themes
 - [ ] Add colors palette
 - [ ] Add default settings
+- [ ] Make order
 
 ## Next steps
 

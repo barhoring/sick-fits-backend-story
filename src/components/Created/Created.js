@@ -8,7 +8,14 @@ const Created = ({ fileNames, hash }) => {
       {fileNames &&
         fileNames.map((file) => {
           const filePath = fileUtils.getFileUri(hash, file);
-          return <Editor key={filePath} filePath={filePath} />;
+          return (
+            <Editor
+              githubLink={fileUtils.getGithubCommitLink(hash, file)}
+              fileName={file}
+              key={filePath}
+              filePath={filePath}
+            />
+          );
         })}
     </>
   );

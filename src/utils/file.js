@@ -29,9 +29,9 @@ const getFileUri = (hash, fileName) => {
   return uri;
 };
 
-const githubCommitLink = `https://github.com/barhoring/reach-router/tree`;
-const getGithubCommitLink = (hash) => {
-  return `${githubCommitLink}/${hash}`;
+const githubCommitLink = `https://github.com/barhoring/reach-router/blob/`;
+const getGithubCommitLink = (hash, fileName) => {
+  return `${githubCommitLink}/${hash}/${fileName}`;
 };
 
 const objectToString = (obj) => {

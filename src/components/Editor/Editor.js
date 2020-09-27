@@ -3,8 +3,9 @@ import MonacoEditor from "@monaco-editor/react";
 import axios from "axios";
 import { file as fileUtils } from "../../utils";
 import { ThemeContext } from "../../ThemeContext";
+import { Typography } from "@material-ui/core/";
 
-const Editor = ({ filePath }) => {
+const Editor = ({ filePath, fileName, githubLink }) => {
   const { isDarkMode } = useContext(ThemeContext);
   const [text, setText] = useState(null);
   // fetch the file from raw github
@@ -44,8 +45,13 @@ const Editor = ({ filePath }) => {
 
   return (
     <>
+      <h1>{fileName}</h1>
       <h2>{fileUtils.getFileName(filePath)}</h2>
-      <h3>{filePath}</h3>
+      <a href={githubLink} target="_blank" rel="noopener noreferrer">
+        <Typography component="h3" variant="h3">
+          {fileName}
+        </Typography>
+      </a>
       <div style={styles.root}>
         <MonacoEditor
           // style={styles.editor}
