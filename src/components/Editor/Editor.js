@@ -3,7 +3,7 @@ import MonacoEditor from "@monaco-editor/react";
 import axios from "axios";
 import { file as fileUtils } from "../../utils";
 import { ThemeContext } from "../../ThemeContext";
-import { Card, CardActions, CardContent, Button } from "@material-ui/core/";
+import { Card, CardActions, CardContent } from "@material-ui/core/";
 import useStyles from "./useStyles";
 import { FileNameHeading, GithubLink } from "../../components";
 
