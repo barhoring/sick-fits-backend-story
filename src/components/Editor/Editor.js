@@ -3,9 +3,12 @@ import MonacoEditor from "@monaco-editor/react";
 import axios from "axios";
 import { file as fileUtils } from "../../utils";
 import { ThemeContext } from "../../ThemeContext";
-import { Typography } from "@material-ui/core/";
+import { Card, CardActions, CardContent, Button } from "@material-ui/core/";
+import useStyles from "./useStyles";
+import { FileNameHeading, GithubLink } from "../../components";
 
 const Editor = ({ filePath, fileName, githubLink }) => {
+  const classes = useStyles();
   const { isDarkMode } = useContext(ThemeContext);
   const [text, setText] = useState(null);
   // fetch the file from raw github
@@ -44,23 +47,25 @@ const Editor = ({ filePath, fileName, githubLink }) => {
   }, []);
 
   return (
-    <>
-      <h1>{fileName}</h1>
-      <h2>{fileUtils.getFileName(filePath)}</h2>
-      <a href={githubLink} target="_blank" rel="noopener noreferrer">
-        <Typography component="h3" variant="h3">
-          {fileName}
-        </Typography>
-      </a>
-      <div style={styles.root}>
-        <MonacoEditor
-          // style={styles.editor}
-          value={text || ""}
-          theme={isDarkMode ? "dark" : "light"}
-          language={fileUtils.getLanguage(filePath)}
-        />
-      </div>
-    </>
+    <div style={{ display: "flex", justifyContent: "center" }}>
+      <Card className={classes.root} variant="outlined">
+        <CardContent>
+          <FileNameHeading link={githubLink} fileName={fileName} />
+          <div style={styles.root}>
+            <MonacoEditor
+              // style={styles.editor}
+              value={text || ""}
+              theme={isDarkMode ? "dark" : "light"}
+              language={fileUtils.getLanguage(filePath)}
+            />
+          </div>
+        </CardContent>
+        <CardActions>
+          {/* <Button size="small">Learn More</Button> */}
+          <GithubLink commitGithubLink={githubLink} />
+        </CardActions>
+      </Card>
+    </div>
   );
 };
 
@@ -69,9 +74,9 @@ const styles = {
     width: "100wh",
     height: "80vh",
     display: "flex",
-    justifyContent: "space-between",
+    alignItems: "center",
     flexDirection: "column",
-    padding: 20,
+    padding: "0 20 0 20",
   },
 };
 

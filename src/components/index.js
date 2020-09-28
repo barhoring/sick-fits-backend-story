@@ -5,6 +5,8 @@ import DiffEditor from "./DiffEditor";
 import CommitSelector from "./CommitSelector.js";
 import Layout from "./Layout";
 import CommitStats from "./CommitStats";
+import FileNameHeading from "./FileNameHeading";
+import GithubLink from "./GithubLink";
 
 export {
   Commit,
@@ -14,4 +16,6 @@ export {
   Layout,
   CommitSelector,
   CommitStats,
+  FileNameHeading,
+  GithubLink,
 };

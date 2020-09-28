@@ -11,10 +11,11 @@ import {
 import GitHubIcon from "@material-ui/icons/GitHub";
 import { file as fileUtils } from "../../utils";
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   paper: {
     padding: 10,
-    backgroundColor: "gainsboro",
+    // backgroundColor: "gainsboro",
+    backgroundColor: theme.palette.grey["300"],
   },
   root: {
     width: "75%",
@@ -31,7 +32,7 @@ const useStyles = makeStyles({
   pos: {
     marginBottom: 12,
   },
-});
+}));
 
 const CommitStats = ({
   hash,

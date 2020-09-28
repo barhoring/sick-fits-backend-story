@@ -12,11 +12,12 @@ const Modified = ({ filesModify, hash, prevHash }) => {
 
           return (
             <div style={styles.root}>
-              <div>{file}</div>
               <DiffEditor
                 key={modifiedFilePath}
                 modifiedFilePath={modifiedFilePath}
                 originalFilePath={originalFilePath}
+                githubLink={fileUtils.getGithubCommitLink(hash, file)}
+                fileName={file}
               />
             </div>
           );
