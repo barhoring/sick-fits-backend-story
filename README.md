@@ -1,17 +1,19 @@
 #Gitty
 
+- Make accordion for files changed
 - [ ] Each Editor (regular or diff) should be able to derive its filePath
+- [ ] Make a wrapper component around Editor and DiffEditor
 - [ ] Commit (derive hash, prevHash) Created Modified
-- [ ] Make paper background color grey from palette
+- [x] Make paper background color grey from palette
 - [ ] prettify Header compomnent
-- [ ] Add Modified files
-- [ ] Add Material UI
+- [x] Add Modified files
+- [x] Add Material UI
   - [x] Drop down for selecting commit
 - [ ] Add dark theme
-- [ ] Add monaco editor themes
-- [ ] Add colors palette
 - [ ] Add default settings
-- [ ] Make order
+  - [ ] Add monaco editor themes
+- [ ] Add colors palette
+- [ ] Make order no balagan
 
 ## Next steps
 
