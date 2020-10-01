@@ -26,7 +26,7 @@ const Commit = ({ hash, data }) => {
 
   return (
     <>
-      <CommitStats {...{ ...stats, hash, authorName }} />
+      <CommitStats {...{ ...data, hash, authorName }} />
       <ModifiedContainer />
       <Created hash={hash} fileNames={filesAdded} />
     </>

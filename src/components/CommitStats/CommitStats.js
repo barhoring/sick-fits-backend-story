@@ -7,36 +7,45 @@ import {
   Paper,
   Typography,
   makeStyles,
+  Accordion,
+  AccordionSummary,
+  AccordionDetails,
 } from "@material-ui/core";
 import GitHubIcon from "@material-ui/icons/GitHub";
+import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import { file as fileUtils } from "../../utils";
+import useStyles from "./useStyles";
 
-const useStyles = makeStyles((theme) => ({
-  paper: {
-    padding: 10,
-    // backgroundColor: "gainsboro",
-    backgroundColor: theme.palette.grey["300"],
-  },
-  root: {
-    width: "75%",
-    height: "75%",
-  },
-  bullet: {
-    display: "inline-block",
-    margin: "0 2px",
-    transform: "scale(0.8)",
-  },
-  title: {
-    fontSize: 14,
-  },
-  pos: {
-    marginBottom: 12,
-  },
-}));
+// const useStyles = makeStyles((theme) => ({
+//   paper: {
+//     padding: 10,
+//     // backgroundColor: "gainsboro",
+//     backgroundColor: theme.palette.grey["300"],
+//   },
+//   root: {
+//     width: "75%",
+//     height: "75%",
+//   },
+//   bullet: {
+//     display: "inline-block",
+//     margin: "0 2px",
+//     transform: "scale(0.8)",
+//   },
+//   title: {
+//     fontSize: 14,
+//   },
+//   pos: {
+//     marginBottom: 12,
+//   },
+// }));
 
 const CommitStats = ({
   hash,
   authorName,
+  filesAdded,
+  filesModify,
+  filesDeleted,
+  filesRenamed,
   numFilesAdded,
   numFilesModified,
   numFilesDeleted,
@@ -47,51 +56,112 @@ const CommitStats = ({
   const commitGithubLink = fileUtils.getGithubCommitLink(hash);
 
   return (
-    <Paper className={`${classes.paper} flex center`} elevation={3}>
-      <Card className={classes.root} variant="outlined">
-        <CardContent>
-          <Typography
-            className={classes.title}
-            color="textSecondary"
-            gutterBottom
-          >
-            Commit {hash}
-          </Typography>
-          <Typography variant="h5" component="h2">
-            by {authorName}
-          </Typography>
-          <Typography className={classes.pos} color="textSecondary">
-            on September 12, 1991
-          </Typography>
-          <div className="flex center">
-            <div className="flex vertical" style={{ alignItems: "flex-start" }}>
-              <Typography variant="h5" component="h2">
-                {bull} {numFilesAdded} files added
+    <>
+      <Paper
+        className={classes.paper}
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+        }}
+        elevation={3}
+      >
+        <div className={classes.root}>
+          <Accordion>
+            <AccordionSummary
+              expandIcon={<ExpandMoreIcon />}
+              aria-controls="panel1a-content"
+              id="commit-degtails"
+            >
+              <Typography className={classes.heading}>
+                Commit Details
               </Typography>
-              <Typography variant="h5" component="h2">
-                {bull} {numFilesModified} files modified
+            </AccordionSummary>
+            <AccordionDetails style={{ flexDirection: "column" }}>
+              <p
+                style={{
+                  flexDirection: "column",
+                  display: "flex",
+                  justifyContent: "flex-start",
+                }}
+              >
+                <Typography
+                  className={classes.title}
+                  color="textSecondary"
+                  gutterBottom
+                >
+                  Commit {hash}
+                </Typography>
+                <Typography variant="h5" component="h2">
+                  by {authorName}
+                </Typography>
+                <Typography className={classes.pos} color="textSecondary">
+                  on September 12, 1991
+                </Typography>
+              </p>
+              <Button
+                size="small"
+                target="_blank"
+                rel="noopener noreferrer"
+                href={commitGithubLink}
+              >
+                <GitHubIcon style={{ fontSize: "4rem" }} color="primary" />
+              </Button>
+            </AccordionDetails>
+          </Accordion>
+
+          <Accordion disabled={filesAdded.length === 0 ? true : false}>
+            <AccordionSummary
+              expandIcon={<ExpandMoreIcon />}
+              aria-controls="panel1a-content"
+              id="panel1a-header"
+            >
+              <Typography className={classes.heading}>
+                {filesAdded.length} files added
               </Typography>
-              <Typography variant="h5" component="h2">
-                {bull} {numFilesDeleted} files deleted
+            </AccordionSummary>
+            <AccordionDetails>
+              <div
+                style={{
+                  flexDirection: "column",
+                  display: "flex",
+                  justifyContent: "flex-start",
+                }}
+              >
+                {filesAdded.map((file, index) => {
+                  return <div style={{ textAlign: "start" }}>{file}</div>;
+                })}
+              </div>
+            </AccordionDetails>
+          </Accordion>
+
+          <Accordion disabled={filesModify.length === 0 ? true : false}>
+            <AccordionSummary
+              expandIcon={<ExpandMoreIcon />}
+              aria-controls="panel3a-content"
+              id="panel3a-header"
+            >
+              <Typography className={classes.heading}>
+                {filesModify.length} files modified
               </Typography>
-              <Typography variant="h5" component="h2">
-                {bull} {numFilesRenamed} files renamed
-              </Typography>
-            </div>
-          </div>
-        </CardContent>
-        <CardActions style={{ justifyContent: "center" }}>
-          <Button
-            size="small"
-            target="_blank"
-            rel="noopener noreferrer"
-            href={commitGithubLink}
-          >
-            <GitHubIcon style={{ fontSize: "4rem" }} color="primary" />
-          </Button>
-        </CardActions>
-      </Card>
-    </Paper>
+            </AccordionSummary>
+            <AccordionDetails>
+              <div
+                style={{
+                  flexDirection: "column",
+                  display: "flex",
+                  justifyContent: "flex-start",
+                }}
+              >
+                {filesModify.map((file, index) => {
+                  return <div style={{ textAlign: "start" }}>{file}</div>;
+                })}
+              </div>
+            </AccordionDetails>
+          </Accordion>
+        </div>
+      </Paper>
+    </>
   );
 };
 
