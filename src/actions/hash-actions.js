@@ -10,7 +10,6 @@ export const incrementHashIndex = () => {
 };
 
 export const decrementHashIndex = () => {
-  debugger;
   return {
     type: HASH_INDEX_DECREMENT,
   };

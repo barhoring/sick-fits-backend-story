@@ -1,7 +1,6 @@
 import defaultState from "../hashDefaultState.json";
 
 const hashReducer = (state = defaultState, action) => {
-  debugger;
   if (action.type === "HASH_INDEX_INCREMENT") {
     return {
       hashIndex: state.hashIndex + 1,

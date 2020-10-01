@@ -22,7 +22,6 @@ const DiffEditor = ({
     axios
       .all([axios.get(modifiedFilePath), axios.get(originalFilePath)])
       .then((values) => {
-        debugger;
         if (typeof values[0].data == "object") {
           setModifiedText(fileUtils.objectToString(values[0].data));
         } else {
@@ -34,7 +33,6 @@ const DiffEditor = ({
         } else {
           setOriginalText(values[1].data);
         }
-        debugger;
       });
   }, []);
 

@@ -13,17 +13,10 @@ const Editor = ({ filePath, fileName, githubLink }) => {
   const [text, setText] = useState(null);
   // fetch the file from raw github
 
-  const config = {
-    headers: {
-      "Content-Length": 0,
-      "Content-Type": "text/plain",
-    },
-    responseType: "text",
-  };
-
   useEffect(() => {
+    debugger;
     axios
-      .get(filePath, config)
+      .get(filePath)
       .then(function (response) {
         // handle success
         if (typeof response.data == "object") {
