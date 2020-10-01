@@ -68,7 +68,9 @@ const CommitStats = ({
       >
         <div className={classes.root}>
           <Typography className={classes.heading}>Commit Details</Typography>
-
+          <Typography variant="h5" gutterBottom>
+            Commit Details
+          </Typography>
           <div>
             <p
               style={{
@@ -141,7 +143,11 @@ const CommitStats = ({
                 }}
               >
                 {filesModify.map((file, index) => {
-                  return <div style={{ textAlign: "start" }}>{file}</div>;
+                  return (
+                    <div style={{ textAlign: "start" }}>
+                      <a href={`#${file}`}>{file}</a>
+                    </div>
+                  );
                 })}
               </div>
             </AccordionDetails>
