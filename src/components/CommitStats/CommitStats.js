@@ -67,48 +67,31 @@ const CommitStats = ({
         elevation={3}
       >
         <div className={classes.root}>
-          <Accordion>
-            <AccordionSummary
-              expandIcon={<ExpandMoreIcon />}
-              aria-controls="panel1a-content"
-              id="commit-degtails"
+          <Typography className={classes.heading}>Commit Details</Typography>
+
+          <div>
+            <p
+              style={{
+                flexDirection: "column",
+                display: "flex",
+                justifyContent: "flex-start",
+              }}
             >
-              <Typography className={classes.heading}>
-                Commit Details
+              <Typography
+                className={classes.title}
+                color="textSecondary"
+                gutterBottom
+              >
+                Commit {hash}
               </Typography>
-            </AccordionSummary>
-            <AccordionDetails style={{ flexDirection: "column" }}>
-              <p
-                style={{
-                  flexDirection: "column",
-                  display: "flex",
-                  justifyContent: "flex-start",
-                }}
-              >
-                <Typography
-                  className={classes.title}
-                  color="textSecondary"
-                  gutterBottom
-                >
-                  Commit {hash}
-                </Typography>
-                <Typography variant="h5" component="h2">
-                  by {authorName}
-                </Typography>
-                <Typography className={classes.pos} color="textSecondary">
-                  on September 12, 1991
-                </Typography>
-              </p>
-              <Button
-                size="small"
-                target="_blank"
-                rel="noopener noreferrer"
-                href={commitGithubLink}
-              >
-                <GitHubIcon style={{ fontSize: "4rem" }} color="primary" />
-              </Button>
-            </AccordionDetails>
-          </Accordion>
+              <Typography variant="h5" component="h2">
+                by {authorName}
+              </Typography>
+              <Typography className={classes.pos} color="textSecondary">
+                on September 12, 1991
+              </Typography>
+            </p>
+          </div>
 
           <Accordion disabled={filesAdded.length === 0 ? true : false}>
             <AccordionSummary
@@ -129,7 +112,11 @@ const CommitStats = ({
                 }}
               >
                 {filesAdded.map((file, index) => {
-                  return <div style={{ textAlign: "start" }}>{file}</div>;
+                  return (
+                    <div style={{ textAlign: "start" }}>
+                      <a href={`#${file}`}>{file}</a>
+                    </div>
+                  );
                 })}
               </div>
             </AccordionDetails>
@@ -160,6 +147,14 @@ const CommitStats = ({
             </AccordionDetails>
           </Accordion>
         </div>
+        <Button
+          size="small"
+          target="_blank"
+          rel="noopener noreferrer"
+          href={commitGithubLink}
+        >
+          <GitHubIcon style={{ fontSize: "4rem" }} color="primary" />
+        </Button>
       </Paper>
     </>
   );

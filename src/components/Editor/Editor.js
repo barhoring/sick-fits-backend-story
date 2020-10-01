@@ -50,7 +50,9 @@ const Editor = ({ filePath, fileName, githubLink }) => {
     <div style={{ display: "flex", justifyContent: "center" }}>
       <Card className={classes.root} variant="outlined">
         <CardContent>
-          <FileNameHeading link={githubLink} fileName={fileName} />
+          <p id={fileName}>
+            <FileNameHeading link={githubLink} fileName={fileName} />
+          </p>
           <div style={styles.root}>
             <MonacoEditor
               // style={styles.editor}
