@@ -1,6 +1,7 @@
 import Commit from "./Commit";
 import Created from "./Created";
 import Modified from "./Modified";
+import Editor from "./Editor";
 import DiffEditor from "./DiffEditor";
 import CommitSelector from "./CommitSelector.js";
 import Layout from "./Layout";
@@ -12,6 +13,7 @@ export {
   Commit,
   Created,
   Modified,
+  Editor,
   DiffEditor,
   Layout,
   CommitSelector,

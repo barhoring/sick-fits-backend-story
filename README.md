@@ -1,6 +1,6 @@
 #Gitty
 
-- Make accordion for files changed
+- [x] Make accordion for files changed
 - [ ] Each Editor (regular or diff) should be able to derive its filePath
 - [ ] Make a wrapper component around Editor and DiffEditor
 - [ ] Commit (derive hash, prevHash) Created Modified
