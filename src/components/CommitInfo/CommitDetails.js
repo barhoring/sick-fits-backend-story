@@ -10,13 +10,7 @@ const CommitDetails = ({ hash, authorName }) => {
         Commit Details
       </Typography>
       <div>
-        <p
-          style={{
-            flexDirection: "column",
-            display: "flex",
-            justifyContent: "flex-start",
-          }}
-        >
+        <p className={classes.commitDetails}>
           <Typography
             className={classes.title}
             color="textSecondary"

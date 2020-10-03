@@ -19,5 +19,10 @@ const useStyles = makeStyles((theme) => ({
     width: "auto",
     margin: "1rem",
   },
+  commitDetails: {
+    flexDirection: "column",
+    display: "flex",
+    justifyContent: "flex-start",
+  },
 }));
 export default useStyles;
