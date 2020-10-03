@@ -1,31 +1,20 @@
 import React from "react";
-import {
-  Button,
-  Paper,
-  Typography,
-  Accordion,
-  AccordionSummary,
-  AccordionDetails,
-} from "@material-ui/core";
+import { Button, Paper } from "@material-ui/core";
 import GitHubIcon from "@material-ui/icons/GitHub";
-import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import { file as fileUtils } from "../../utils";
 import useStyles from "./useStyles";
 import FileAccordion from "./FileAccordion";
 import CommitDetails from "./CommitDetails";
 
-const CommitStats = ({
+const CommitInfo = ({
   hash,
   authorName,
   filesAdded,
   filesModify,
   filesDeleted,
   filesRenamed,
-  numFilesAdded,
-  numFilesModified,
-  numFilesDeleted,
-  numFilesRenamed,
 }) => {
+  // debugger;
   const classes = useStyles();
   const commitGithubLink = fileUtils.getGithubCommitLink(hash);
 
@@ -46,9 +35,10 @@ const CommitStats = ({
         >
           <GitHubIcon style={{ fontSize: "4rem" }} color="primary" />
         </Button>
+        <p>Not showing deleted and renamed files</p>
       </Paper>
     </>
   );
 };
 
-export default CommitStats;
+export default CommitInfo;

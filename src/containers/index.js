@@ -4,6 +4,7 @@ import DiffEditorContainer from "./DiffEditorContainer";
 import ModifiedContainer from "./ModifiedContainer";
 import EditorContainer from "./EditorContainer";
 import AddedFilesContainer from "./AddedFilesContainer";
+import CommitInfoContainer from "./CommitInfoContainer";
 export {
   CommitSelectorContainer,
   CommitContainer,
@@ -11,4 +12,5 @@ export {
   ModifiedContainer,
   EditorContainer,
   AddedFilesContainer,
+  CommitInfoContainer,
 };

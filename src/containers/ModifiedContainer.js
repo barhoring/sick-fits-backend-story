@@ -1,4 +1,4 @@
-import { Modified } from "../components";
+import { ModifiedFiles } from "../components";
 import { connect } from "react-redux";
 
 const mapStateToProps = (state) => {
@@ -14,4 +14,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, null)(Modified);
+export default connect(mapStateToProps, null)(ModifiedFiles);

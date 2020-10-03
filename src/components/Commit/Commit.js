@@ -1,6 +1,6 @@
 import React from "react";
-import { AddedFilesContainer } from "../../containers";
-import CommitStats from "../CommitStats";
+import { AddedFilesContainer, CommitInfoContainer } from "../../containers";
+import CommitInfo from "../CommitInfo";
 
 import { ModifiedContainer } from "../../containers";
 
@@ -26,7 +26,8 @@ const Commit = ({ hash, data }) => {
 
   return (
     <>
-      <CommitStats {...{ ...data, hash, authorName }} />
+      <CommitInfoContainer />
+      {/* <CommitInfo {...{ ...data, hash, authorName }} /> */}
       <ModifiedContainer />
       <AddedFilesContainer />
     </>
