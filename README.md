@@ -9,7 +9,7 @@
 - [x] Add Modified files
 - [x] Add Material UI
   - [x] Drop down for selecting commit
-- [ ] Add dark theme
+- [ ] Add dark theme for UI
 - [ ] Add default settings
   - [ ] Add monaco editor themes
 - [ ] Add colors palette

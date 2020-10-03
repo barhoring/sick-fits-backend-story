@@ -1,5 +1,6 @@
 import React from "react";
 import Created from "../../components/Created";
+import { AddedFilesContainer } from "../../containers";
 import CommitStats from "../CommitStats";
 
 import { ModifiedContainer } from "../../containers";
@@ -28,7 +29,8 @@ const Commit = ({ hash, data }) => {
     <>
       <CommitStats {...{ ...data, hash, authorName }} />
       <ModifiedContainer />
-      <Created hash={hash} fileNames={filesAdded} />
+      <AddedFilesContainer {...{ hash }} />
+      {/* <Created hash={hash} fileNames={filesAdded} /> */}
     </>
   );
 };

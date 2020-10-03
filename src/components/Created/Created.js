@@ -1,11 +1,11 @@
 import React from "react";
 import { EditorContainer } from "../../containers";
 
-const Created = ({ fileNames, hash }) => {
+const Created = ({ files, hash }) => {
   return (
     <div>
-      {fileNames &&
-        fileNames.map((file) => {
+      {files &&
+        files.map((file) => {
           return (
             <EditorContainer
               key={`${hash}:${file}`}
