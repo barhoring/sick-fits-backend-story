@@ -28,8 +28,7 @@ const Commit = ({ hash, data }) => {
     <>
       <CommitStats {...{ ...data, hash, authorName }} />
       <ModifiedContainer />
-      <AddedFilesContainer {...{ hash }} />
-      {/* <Created hash={hash} fileNames={filesAdded} /> */}
+      <AddedFilesContainer />
     </>
   );
 };

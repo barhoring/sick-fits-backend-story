@@ -14,6 +14,7 @@
   - [ ] Add monaco editor themes
 - [ ] Add colors palette
 - [ ] Make order no balagan
+  - [ ] use lodash/fp set
 
 ## Next steps
 
