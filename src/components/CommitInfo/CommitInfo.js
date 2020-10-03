@@ -1,13 +1,13 @@
 import React from "react";
 import { Button, Paper } from "@material-ui/core";
 import GitHubIcon from "@material-ui/icons/GitHub";
-import { file as fileUtils } from "../../utils";
 import useStyles from "./useStyles";
 import FileAccordion from "./FileAccordion";
 import CommitDetails from "./CommitDetails";
 
 const CommitInfo = ({
   hash,
+  commitGithubLink,
   authorName,
   filesAdded,
   filesModify,
@@ -16,7 +16,6 @@ const CommitInfo = ({
 }) => {
   // debugger;
   const classes = useStyles();
-  const commitGithubLink = fileUtils.getGithubCommitLink(hash);
 
   return (
     <>
