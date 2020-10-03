@@ -17,7 +17,7 @@ const Editor = ({ filePath, fileName, githubLink }) => {
   useEffect(() => {
     debugger;
     fetchRawGithubFile(filePath, setText);
-  }, []);
+  });
 
   return (
     <div className={classes.container}>

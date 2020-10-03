@@ -3,9 +3,8 @@ import Header from "./Header";
 import { CommitContainer, CommitSelectorContainer } from "../../containers";
 
 import { ThemeProvider } from "../../ThemeContext";
-import Commit from "../Commit";
 
-const Layout = ({ hash }) => {
+const Layout = () => {
   return (
     <ThemeProvider>
       <Header />
