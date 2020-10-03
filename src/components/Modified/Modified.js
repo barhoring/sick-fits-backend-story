@@ -1,11 +1,11 @@
 import React from "react";
 import { DiffEditorContainer } from "../../containers";
 
-const Modified = ({ filesModify, hash, prevHash }) => {
+const Modified = ({ filesModified, hash, prevHash }) => {
   return (
     <>
-      {filesModify &&
-        filesModify.map((file) => {
+      {filesModified &&
+        filesModified.map((file) => {
           return (
             <div style={styles.root}>
               <DiffEditorContainer

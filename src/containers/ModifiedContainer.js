@@ -2,7 +2,7 @@ import { Modified } from "../components";
 import { connect } from "react-redux";
 
 const mapStateToProps = (state) => {
-  const { hashIndex, prevHashIndex } = state.hashes;
+  const { hashIndex } = state.hashes;
   const hash = state.commits.ids[hashIndex];
   const prevHash = state.commits.ids[hashIndex - 1];
   const data = state.commits.commits[hash];
@@ -10,7 +10,7 @@ const mapStateToProps = (state) => {
   return {
     hash,
     prevHash,
-    filesModify,
+    filesModified: filesModify,
   };
 };
 
