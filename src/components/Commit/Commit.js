@@ -1,5 +1,4 @@
 import React from "react";
-import Created from "../../components/Created";
 import { AddedFilesContainer } from "../../containers";
 import CommitStats from "../CommitStats";
 

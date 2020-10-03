@@ -1,5 +1,5 @@
 import Commit from "./Commit";
-import Created from "./Created";
+import AddedFiles from "./AddedFiles";
 import Modified from "./Modified";
 import Editor from "./Editor";
 import DiffEditor from "./DiffEditor";
@@ -11,7 +11,7 @@ import GithubLink from "./GithubLink";
 
 export {
   Commit,
-  Created,
+  AddedFiles,
   Modified,
   Editor,
   DiffEditor,

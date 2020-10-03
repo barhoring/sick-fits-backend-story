@@ -1,4 +1,4 @@
-import { Created } from "../components";
+import { AddedFiles } from "../components";
 import { connect } from "react-redux";
 
 const mapStateToProps = (state, ownProps) => {
@@ -9,4 +9,4 @@ const mapStateToProps = (state, ownProps) => {
   };
 };
 
-export default connect(mapStateToProps)(Created);
+export default connect(mapStateToProps)(AddedFiles);
