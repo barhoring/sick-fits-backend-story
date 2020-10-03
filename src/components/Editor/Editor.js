@@ -8,16 +8,14 @@ import { FileNameHeading, GithubLink } from "../../components";
 import { fetchRawGithubFile } from "./helpers";
 
 const Editor = ({ filePath, fileName, githubLink }) => {
-  debugger;
   const classes = useStyles();
   const { isDarkMode } = useContext(ThemeContext);
   const [text, setText] = useState(null);
   // fetch the file from raw github
 
   useEffect(() => {
-    debugger;
     fetchRawGithubFile(filePath, setText);
-  });
+  }, [filePath]);
 
   return (
     <div className={classes.container}>

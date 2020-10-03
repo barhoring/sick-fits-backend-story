@@ -1,23 +1,16 @@
 import React from "react";
-import DiffEditor from "../DiffEditor";
-import { file as fileUtils } from "../../utils";
+import { DiffEditorContainer } from "../../containers";
 
 const Modified = ({ filesModify, hash, prevHash }) => {
   return (
     <>
       {filesModify &&
         filesModify.map((file) => {
-          const modifiedFilePath = fileUtils.getFileUri(hash, file);
-          const originalFilePath = fileUtils.getFileUri(prevHash, file);
-
           return (
             <div style={styles.root}>
-              <DiffEditor
-                key={modifiedFilePath}
-                modifiedFilePath={modifiedFilePath}
-                originalFilePath={originalFilePath}
-                githubLink={fileUtils.getGithubCommitLink(hash, file)}
-                fileName={file}
+              <DiffEditorContainer
+                key={`${hash}:${file}`}
+                {...{ hash, prevHash, fileName: file }}
               />
             </div>
           );

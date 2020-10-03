@@ -10,11 +10,10 @@ import useStyles from "./useStyles";
 const DiffEditor = ({
   modifiedFilePath,
   originalFilePath,
-  original,
-  modified,
   githubLink,
   fileName,
 }) => {
+  debugger;
   const [originalText, setOriginalText] = useState(null);
   const [modifiedText, setModifiedText] = useState(null);
 
