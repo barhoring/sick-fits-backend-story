@@ -1,5 +1,6 @@
 import axios from "axios";
 const fetchRawGithubFile = (filePath, setText) => {
+  debugger;
   axios
     .get(filePath)
     .then(function (response) {

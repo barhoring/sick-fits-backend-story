@@ -1,6 +1,5 @@
 import React from "react";
 import {
-  Button,
   InputLabel,
   FormControl,
   Select,
@@ -8,29 +7,25 @@ import {
   FormHelperText,
 } from "@material-ui/core/";
 import useStyles from "./useStyles";
+import CommitNavButton from "./CommitNavButton";
 
 const CommitSelector = ({
   ids,
   hashIndex,
   currentHash,
-  prevHash,
   incrementHashIndex,
   decrementHashIndex,
-  hashhIndexGoTo,
   hashSet,
 }) => {
   const classes = useStyles();
   return (
     <div>
       <FormControl className={classes.formControl}>
-        <InputLabel
-          id="demo-simple-select-helper-label"
-          style={{ fontSize: "2rem" }}
-        >
+        <InputLabel id="commit-selector-label" style={{ fontSize: "2rem" }}>
           Commit
         </InputLabel>
         <Select
-          labelId="demo-simple-select-helper-label"
+          labelId="commit-selector-label"
           id="demo-simple-select-helper"
           value={currentHash}
           onChange={(e) => {
@@ -45,25 +40,21 @@ const CommitSelector = ({
             );
           })}
         </Select>
-        <FormHelperText>Some important helper text</FormHelperText>
+        <FormHelperText>Chose commit to view</FormHelperText>
       </FormControl>
       <div className={classes.root}>
-        <Button
+        <CommitNavButton
           onClick={decrementHashIndex}
           disabled={hashIndex === 0 ? true : false}
-          color="primary"
-          variant="contained"
         >
           Previous Commit
-        </Button>
-        <Button
+        </CommitNavButton>
+        <CommitNavButton
           onClick={incrementHashIndex}
           disabled={hashIndex === ids.length - 1 ? true : false}
-          color="primary"
-          variant="contained"
         >
           Next Commit
-        </Button>
+        </CommitNavButton>
       </div>
     </div>
   );
