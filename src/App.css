@@ -1,5 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Damion&display=swap);
 @import url(https://fonts.googleapis.com/css?family=Covered+By+Your+Grace&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Secular+One&display=swap);
 /* @import url("https://fonts.googleapis.com/css2?family=Damion&display=swap"); */
 /* .gitty {
   font-family: "Damion";
@@ -7,7 +8,7 @@
 * {
   box-sizing: border-box;
   font-size: 10px;
-  /* border: 1px solid blue; */
+  border: 1px solid blue;
 }
 .App {
   text-align: center;

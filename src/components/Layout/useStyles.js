@@ -1,6 +1,12 @@
 import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
+  menuButton: {
+    marginRight: theme.spacing(1),
+  },
+  title: {
+    flexGrow: 1,
+  },
   section: {
     display: "flex",
     alignItems: "center",
@@ -9,9 +15,9 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: "white",
   },
   gitty: {
-    fontFamily: "Damion",
-    color: "salmon",
-    // fontSize: "2rem",
+    fontFamily: "Secular One",
+    color: "inherit",
+    //fontSize: "8rem",
   },
   brief: {
     fontFamily: "Covered By Your Grace",
