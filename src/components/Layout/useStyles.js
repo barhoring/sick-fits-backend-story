@@ -7,12 +7,9 @@ const useStyles = makeStyles((theme) => ({
   title: {
     flexGrow: 1,
   },
-  section: {
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "space-around",
-    flexDirection: "row",
-    backgroundColor: "white",
+  root: {
+    flexGrow: 1,
+    marginBottom: theme.spacing(5),
   },
   gitty: {
     fontFamily: "Secular One",
