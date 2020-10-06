@@ -5,7 +5,6 @@ import Typography from "@material-ui/core/Typography";
 import { AppBar, Toolbar, IconButton } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
 import useStyles from "./useStyles";
-import { Link } from "@reach/router";
 import Sidebar from "./Sidebar";
 const Header = () => {
   const classes = useStyles();
@@ -43,11 +42,8 @@ const Header = () => {
               <Typography className={classes.title} variant="h5">
                 git:story
               </Typography>
-              {/* <Typography variant="h6" gutterBottom>
-              A better way to understand code
-            </Typography> */}
             </div>
-            <div
+            {/* <div
               style={{
                 display: "flex",
                 justifyContent: "space-around",
@@ -55,7 +51,7 @@ const Header = () => {
               }}
             >
               <Link to="/">Home</Link> <Link to="/settings">Setings</Link>
-            </div>
+            </div> */}
 
             <FormControlLabel
               style={{ right: "1rem", position: "absolute" }}
