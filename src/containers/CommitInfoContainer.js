@@ -7,7 +7,6 @@ const mapStateToProps = (state, ownProps) => {
   const hash = state.hashes.ids[hashIndex];
   const data = state.commits.commits[hash];
   const commitGithubLink = fileUtils.getGithubCommitLink(hash);
-  debugger;
   return {
     hash,
     commitGithubLink,

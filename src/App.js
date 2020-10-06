@@ -1,21 +1,22 @@
-import React, { useState } from "react";
-import { CommitSelectorContainer } from "./containers";
+import React from "react";
+import { LayoutContainer } from "./containers";
 import { connect } from "react-redux";
-import { Layout } from "./components";
+
 import "./App.css";
 
-function App({ ids }) {
-  const [hash, setHash] = useState(ids[0]);
-  console.log(hash);
+function App() {
   return (
-    <div className="App" style={{ width: "100%", height: "100%" }}>
-      <Layout hash={hash} />
-    </div>
+    <>
+      <div style={{ marginBottom: "1rem" }}></div>
+      <div className="App" style={{ width: "100%", height: "100%" }}>
+        <LayoutContainer />
+      </div>
+    </>
   );
 }
 
 const mapStateToProps = (state) => {
-  return { ids: state.commits.ids };
+  return state;
 };
 
-export default connect(mapStateToProps)(App);
+export default connect(mapStateToProps, null)(App);

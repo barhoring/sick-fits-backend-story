@@ -7,6 +7,7 @@ const CommitNavButton = ({ onClick, disabled, children }) => {
       disabled={disabled}
       color="primary"
       variant="contained"
+      style={{ height: "4rem" }}
     >
       {children}
     </Button>

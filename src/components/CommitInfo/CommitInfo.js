@@ -14,7 +14,6 @@ const CommitInfo = ({
   filesDeleted,
   filesRenamed,
 }) => {
-  // debugger;
   const classes = useStyles();
 
   return (

@@ -6,16 +6,14 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     flexGrow: 1,
+    fontFamily: "Secular One",
+    color: "inherit",
   },
   root: {
     flexGrow: 1,
     marginBottom: theme.spacing(5),
   },
-  gitty: {
-    fontFamily: "Secular One",
-    color: "inherit",
-    //fontSize: "8rem",
-  },
+
   brief: {
     fontFamily: "Covered By Your Grace",
     color: "",

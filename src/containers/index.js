@@ -5,6 +5,8 @@ import ModifiedContainer from "./ModifiedContainer";
 import EditorContainer from "./EditorContainer";
 import AddedFilesContainer from "./AddedFilesContainer";
 import CommitInfoContainer from "./CommitInfoContainer";
+import CommitViewContainer from "./CommitViewContainer";
+import LayoutContainer from "./LayoutContainer";
 export {
   CommitSelectorContainer,
   CommitContainer,
@@ -13,4 +15,6 @@ export {
   EditorContainer,
   AddedFilesContainer,
   CommitInfoContainer,
+  CommitViewContainer,
+  LayoutContainer,
 };

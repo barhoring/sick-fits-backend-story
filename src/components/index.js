@@ -8,6 +8,7 @@ import Layout from "./Layout";
 import CommitInfo from "./CommitInfo";
 import FileNameHeading from "./FileNameHeading";
 import GithubLink from "./GithubLink";
+import CommitView from "./CommitView";
 
 export {
   Commit,
@@ -20,4 +21,5 @@ export {
   CommitInfo,
   FileNameHeading,
   GithubLink,
+  CommitView,
 };

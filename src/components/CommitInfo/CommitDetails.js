@@ -1,12 +1,13 @@
 import React from "react";
-import { Typography } from "@material-ui/core";
+import { Typography, Divider } from "@material-ui/core";
 import useStyles from "./useStyles";
 
 const CommitDetails = ({ hash, authorName }) => {
   const classes = useStyles();
   return (
     <>
-      <Typography variant="h5" gutterBottom>
+      <Divider component="hr" />
+      <Typography variant="h4" gutterBottom>
         Commit Details
       </Typography>
       <div>

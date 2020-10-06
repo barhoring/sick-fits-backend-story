@@ -13,7 +13,6 @@ const DiffEditor = ({
   githubLink,
   fileName,
 }) => {
-  debugger;
   const [originalText, setOriginalText] = useState(null);
   const [modifiedText, setModifiedText] = useState(null);
 

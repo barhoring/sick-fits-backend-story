@@ -1,11 +1,10 @@
 #Gitty
 
 - [x] Make accordion for files changed
-- [ ] Each Editor (regular or diff) should be able to derive its filePath
-- [ ] Make a wrapper component around Editor and DiffEditor
-- [ ] Commit (derive hash, prevHash) Created Modified
+- [x] Each Editor (regular or diff) should be able to derive its filePath
+- [x] Make a wrapper component around Editor and DiffEditor
 - [x] Make paper background color grey from palette
-- [ ] prettify Header compomnent
+- [x] prettify Header compomnent
 - [x] Add Modified files
 - [x] Add Material UI
   - [x] Drop down for selecting commit
