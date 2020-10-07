@@ -30,49 +30,46 @@ const useStyles = makeStyles({
   },
 });
 
+const getListItemComponent = (itemDetails) => {
+  const Component = itemDetails.component;
+  return (
+    <Link
+      to={itemDetails.path}
+      style={{ textDecoration: "none", color: "inherit" }}
+    >
+      <ListItem button key={itemDetails.title}>
+        <ListItemIcon>
+          <Component size="2rem" />
+        </ListItemIcon>
+        <ListItemText primary={itemDetails.title} />
+      </ListItem>
+      <Divider />
+    </Link>
+  );
+};
+
 const menuItems = [
-  { title: "Commits", path: "/" },
-  { title: "Settings", path: "/settings" },
+  { title: "Commits", path: "/", component: GoSettings },
+  {
+    title: "Settings",
+    path: "/settings",
+    component: BsCodeSlash,
+  },
+  {
+    title: "About",
+    path: "/about",
+    component: MailIcon,
+  },
 ];
 
 const Menu = () => {
   const classes = useStyles();
   return (
-    <div
-      className={classes.list}
-      role="presentation"
-      //   onClick={toggleDrawer(anchor, false)}
-      //   onKeyDown={toggleDrawer(anchor, false)}
-    >
+    <div className={classes.list} role="presentation">
       <List>
-        {menuItems.map((item, index) => (
-          <Link
-            to={item.path}
-            style={{ textDecoration: "none", color: "inherit" }}
-          >
-            <ListItem button key={item.title}>
-              <ListItemIcon>
-                {index % 2 === 1 ? (
-                  <GoSettings size="2rem" />
-                ) : (
-                  <BsCodeSlash size="2rem" />
-                )}
-              </ListItemIcon>
-              <ListItemText primary={item.title} />
-            </ListItem>
-          </Link>
-        ))}
-      </List>
-      <Divider />
-      <List>
-        {["About"].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>
-              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-            </ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
+        {menuItems.map((item, index) => {
+          return getListItemComponent(item);
+        })}
       </List>
     </div>
   );

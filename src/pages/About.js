@@ -20,18 +20,18 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Settings = (props) => {
+const About = (props) => {
   console.log(props);
   const classes = useStyles();
   return (
     <div>
       <div className={classes.root}>
         <Typography variant="h2" gutterBottom>
-          Settings
+          About
         </Typography>
       </div>
     </div>
   );
 };
 
-export default Settings;
+export default About;

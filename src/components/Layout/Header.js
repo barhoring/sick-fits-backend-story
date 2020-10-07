@@ -43,15 +43,6 @@ const Header = () => {
                 git:story
               </Typography>
             </div>
-            {/* <div
-              style={{
-                display: "flex",
-                justifyContent: "space-around",
-                flexGrow: 2,
-              }}
-            >
-              <Link to="/">Home</Link> <Link to="/settings">Setings</Link>
-            </div> */}
 
             <FormControlLabel
               style={{ right: "1rem", position: "absolute" }}

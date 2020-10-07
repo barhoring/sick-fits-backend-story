@@ -2,7 +2,7 @@ import React from "react";
 import Header from "./Header";
 import { CommitViewContainer } from "../../containers";
 import { Router } from "@reach/router";
-import { Settings } from "../../pages";
+import { Settings, About } from "../../pages";
 
 import { ThemeProvider } from "../../ThemeContext";
 
@@ -13,9 +13,8 @@ const Layout = () => {
       <Router>
         <CommitViewContainer path="/" />
         <Settings path="/settings/" />
+        <About path="/about/" />
         <CommitViewContainer default />
-        {/* <CommitSelectorContainer /> */}
-        {/* <CommitContainer /> */}
       </Router>
     </ThemeProvider>
   );
