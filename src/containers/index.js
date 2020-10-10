@@ -7,6 +7,7 @@ import AddedFilesContainer from "./AddedFilesContainer";
 import CommitInfoContainer from "./CommitInfoContainer";
 import CommitViewContainer from "./CommitViewContainer";
 import LayoutContainer from "./LayoutContainer";
+import SettingsContainer from "./SettingsContainer";
 export {
   CommitSelectorContainer,
   CommitContainer,
@@ -17,4 +18,5 @@ export {
   CommitInfoContainer,
   CommitViewContainer,
   LayoutContainer,
+  SettingsContainer,
 };

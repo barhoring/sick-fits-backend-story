@@ -7,7 +7,7 @@ import useStyles from "./useStyles";
 import { FileNameHeading, GithubLink } from "../../components";
 import { fetchRawGithubFile } from "./helpers";
 
-const Editor = ({ filePath, fileName, githubLink }) => {
+const Editor = ({ filePath, fileName, githubLink, theme }) => {
   const classes = useStyles();
   const { isDarkMode } = useContext(ThemeContext);
   const [text, setText] = useState(null);
@@ -28,7 +28,9 @@ const Editor = ({ filePath, fileName, githubLink }) => {
           <div className={classes.editor}>
             <MonacoEditor
               value={text || ""}
-              theme={isDarkMode ? "dark" : "light"}
+              theme={theme}
+              // theme={"espresso-libre"}
+              // theme={isDarkMode ? "dark" : "light"}
               language={fileUtils.getLanguage(filePath)}
             />
           </div>

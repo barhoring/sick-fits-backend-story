@@ -29,6 +29,17 @@ const About = (props) => {
         <Typography variant="h2" gutterBottom>
           About
         </Typography>
+        <Typography
+          variant="body1"
+          gutterBottom
+          style={{ display: "felx", alignSelf: "center", width: "50%" }}
+        >
+          Git is a powerful tool, but today git is mainly used as a boring way
+          of securely saving versions of your code. This is ok but I see all
+          this potential, and I see squandering. Git could be a GREAT
+          educational tool, telling the story of how your code incrementally
+          transforms. This is why I created GitStory
+        </Typography>
       </div>
     </div>
   );

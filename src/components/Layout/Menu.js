@@ -7,19 +7,16 @@ import {
   ListItem,
   ListItemIcon,
   ListItemText,
+  Collapse,
 } from "@material-ui/core";
 
 import { Link } from "@reach/router";
-
+import { StarBorder, ExpandLess, ExpandMore } from "@material-ui/icons";
 import InboxIcon from "@material-ui/icons/MoveToInbox";
-import MailIcon from "@material-ui/icons/Mail";
-import SettingsIcon from "@material-ui/icons/Settings";
-import CodeIcon from "@material-ui/icons/Code";
-
-import { FaBeer } from "react-icons/fa";
 
 import { BsCodeSlash } from "react-icons/bs";
 import { GoSettings } from "react-icons/go";
+import { GoHeart } from "react-icons/go";
 
 const useStyles = makeStyles({
   list: {
@@ -30,14 +27,18 @@ const useStyles = makeStyles({
   },
 });
 
-const getListItemComponent = (itemDetails) => {
+const getListItemComponent = (itemDetails, onClick) => {
   const Component = itemDetails.component;
   return (
     <Link
       to={itemDetails.path}
       style={{ textDecoration: "none", color: "inherit" }}
     >
-      <ListItem button key={itemDetails.title}>
+      <ListItem
+        button
+        key={itemDetails.title}
+        onClick={onClick ? onClick : null}
+      >
         <ListItemIcon>
           <Component size="2rem" />
         </ListItemIcon>
@@ -48,28 +49,67 @@ const getListItemComponent = (itemDetails) => {
   );
 };
 
+const Settings = ({ open, handleClick }) => {
+  return (
+    <>
+      <ListItem button onClick={handleClick}>
+        <ListItemIcon>
+          <InboxIcon />
+        </ListItemIcon>
+        <ListItemText primary="Inbox" />
+        {open ? <ExpandLess /> : <ExpandMore />}
+      </ListItem>
+      <Collapse in={open} timeout="auto" unmountOnExit>
+        <List component="div" disablePadding>
+          <ListItem button>
+            {/* <ListItem button className={classes.nested}> */}
+            <ListItemIcon>
+              <StarBorder />
+            </ListItemIcon>
+            <ListItemText primary="Starred" />
+          </ListItem>
+        </List>
+      </Collapse>
+    </>
+  );
+};
+
 const menuItems = [
-  { title: "Commits", path: "/", component: GoSettings },
+  { title: "Commits", path: "/", component: BsCodeSlash },
   {
     title: "Settings",
     path: "/settings",
-    component: BsCodeSlash,
+    component: GoSettings,
   },
   {
     title: "About",
     path: "/about",
-    component: MailIcon,
+    component: GoHeart,
   },
 ];
 
+const menu = menuItems.map((item) => getListItemComponent(item));
+
 const Menu = () => {
   const classes = useStyles();
+  const [open, setOpen] = React.useState(false);
+  const handleClick = () => {
+    setOpen(!open);
+  };
   return (
     <div className={classes.list} role="presentation">
       <List>
-        {menuItems.map((item, index) => {
+        <Divider />
+
+        {/* {menuItems.map((item, index) => {
           return getListItemComponent(item);
-        })}
+        })} */}
+        {menu}
+        {getListItemComponent(
+          { title: "Settings", path: "/", component: GoSettings },
+          handleClick
+        )}
+        <Settings {...{ open, handleClick }} />
       </List>
     </div>
   );

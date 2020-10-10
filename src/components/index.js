@@ -9,6 +9,7 @@ import CommitInfo from "./CommitInfo";
 import FileNameHeading from "./FileNameHeading";
 import GithubLink from "./GithubLink";
 import CommitView from "./CommitView";
+import Settings from "./Settings";
 
 export {
   Commit,
@@ -22,4 +23,5 @@ export {
   FileNameHeading,
   GithubLink,
   CommitView,
+  Settings,
 };

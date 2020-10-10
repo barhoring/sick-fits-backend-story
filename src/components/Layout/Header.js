@@ -11,20 +11,20 @@ const Header = () => {
   const { isDarkMode, toggleDarkMode } = useContext(ThemeContext);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const toggleSidebar = (open) => (event) => {
-    debugger;
     if (
       event.type === "keydown" &&
       (event.key === "Tab" || event.key === "Shift")
     ) {
       return;
     }
-    debugger;
     setIsMenuOpen(open);
   };
   return (
     <>
       <div className={classes.root}>
-        <AppBar color="default" position="static">
+        <AppBar color="default">
+          {/*  position="static"> */}
+          {/* <AppBar color="default" position="static"> */}
           <Toolbar variant="dense">
             <Sidebar
               isMenuOpen={isMenuOpen}
