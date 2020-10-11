@@ -8,6 +8,7 @@ import CommitInfoContainer from "./CommitInfoContainer";
 import CommitViewContainer from "./CommitViewContainer";
 import LayoutContainer from "./LayoutContainer";
 import SettingsContainer from "./SettingsContainer";
+import MenuSettingsContainer from "./MenuSettingsContainer";
 export {
   CommitSelectorContainer,
   CommitContainer,
@@ -19,4 +20,5 @@ export {
   CommitViewContainer,
   LayoutContainer,
   SettingsContainer,
+  MenuSettingsContainer,
 };

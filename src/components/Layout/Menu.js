@@ -11,21 +11,25 @@ import {
 } from "@material-ui/core";
 
 import { Link } from "@reach/router";
-import { StarBorder, ExpandLess, ExpandMore } from "@material-ui/icons";
-import InboxIcon from "@material-ui/icons/MoveToInbox";
+import Settings from "./Settings";
+
+import ThemeList from "../../components/Settings/ThemeList";
 
 import { BsCodeSlash } from "react-icons/bs";
 import { GoSettings } from "react-icons/go";
 import { GoHeart } from "react-icons/go";
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   list: {
     width: 250,
   },
   fullList: {
     width: "auto",
   },
-});
+  nested: {
+    paddingLeft: theme.spacing(4),
+  },
+}));
 
 const getListItemComponent = (itemDetails, onClick) => {
   const Component = itemDetails.component;
@@ -46,31 +50,6 @@ const getListItemComponent = (itemDetails, onClick) => {
       </ListItem>
       <Divider />
     </Link>
-  );
-};
-
-const Settings = ({ open, handleClick }) => {
-  return (
-    <>
-      <ListItem button onClick={handleClick}>
-        <ListItemIcon>
-          <InboxIcon />
-        </ListItemIcon>
-        <ListItemText primary="Inbox" />
-        {open ? <ExpandLess /> : <ExpandMore />}
-      </ListItem>
-      <Collapse in={open} timeout="auto" unmountOnExit>
-        <List component="div" disablePadding>
-          <ListItem button>
-            {/* <ListItem button className={classes.nested}> */}
-            <ListItemIcon>
-              <StarBorder />
-            </ListItemIcon>
-            <ListItemText primary="Starred" />
-          </ListItem>
-        </List>
-      </Collapse>
-    </>
   );
 };
 

@@ -14,7 +14,7 @@ const ThemeList = () => {
     <FormControl>
       {/* <FormControl className={classes.formControl}> */}
       <InputLabel id="commit-selector-label" style={{ fontSize: "2rem" }}>
-        Commit
+        Theme
       </InputLabel>
       <Select
         labelId="commit-selector-label"

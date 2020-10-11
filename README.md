@@ -14,6 +14,8 @@
 - [ ] Add colors palette
 - [ ] Make order no balagan
   - [ ] use lodash/fp set
+- [ ] Add google analytics
+- [ ] Add the story element
 
 ## Next steps
 
