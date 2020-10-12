@@ -21,7 +21,6 @@ const Editor = ({ filePath, fileName, githubLink, theme }) => {
     <div className={classes.container}>
       <Card className={classes.root} variant="outlined">
         <CardContent>
-          <div>{theme}</div>
           {/* id is for an in-page anchor sent from the accordion */}
           <p id={fileName}>
             <FileNameHeading {...{ link: githubLink, fileName }} />

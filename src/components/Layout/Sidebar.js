@@ -12,11 +12,6 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = { setTheme };
 
-const menuClosed = (theme, setTheme) => {
-  console.log("fuck");
-  debugger;
-};
-
 const Sidebar = ({ isMenuOpen, onOpen, onClose }) => {
   return (
     <div>

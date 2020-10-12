@@ -1,15 +1,11 @@
 import React from "react";
 import { CommitContainer, CommitSelectorContainer } from "../../containers";
 
-const CommitView = ({ isMenuOpen }) => {
+const CommitView = () => {
   debugger;
   return (
     <div>
       {" "}
-      <div style={{ marginTop: "50px" }}>
-        isMenuOpen:
-        {isMenuOpen.toString()}
-      </div>
       <CommitSelectorContainer />
       <CommitContainer />
     </div>

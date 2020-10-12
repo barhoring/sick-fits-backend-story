@@ -7,13 +7,11 @@ import { SettingsPage, About } from "../../pages";
 import { ThemeProvider } from "../../ThemeContext";
 
 const Layout = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
   return (
     <ThemeProvider>
-      <Header isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
+      <Header />
       <Router>
-        <CommitViewContainer isMenuOpen={isMenuOpen} path="/" />
+        <CommitViewContainer path="/" />
         <SettingsPage path="/settings/" />
         <About path="/about/" />
         {/* <CommitViewContainer isMenuOpen={isMenuOpen} default /> */}
