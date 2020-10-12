@@ -1,7 +1,6 @@
 import defaultSettings from "./defaultSettings.json";
 
 const settingsReducer = (state = defaultSettings, action) => {
-  // debugger;
   if (action.type === "SET_THEME") {
     const { theme } = action.payload;
     return { ...state, theme };

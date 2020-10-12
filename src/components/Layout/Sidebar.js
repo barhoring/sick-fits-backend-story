@@ -1,6 +1,21 @@
 import React, { useState } from "react";
 import { Drawer } from "@material-ui/core";
 import Menu from "./Menu";
+import { connect } from "react-redux";
+import { setTheme } from "../../actions/settings-actions";
+
+const mapStateToProps = (state) => {
+  return {
+    theme: state.settings.theme,
+  };
+};
+
+const mapDispatchToProps = { setTheme };
+
+const menuClosed = (theme, setTheme) => {
+  console.log("fuck");
+  debugger;
+};
 
 const Sidebar = ({ isMenuOpen, onOpen, onClose }) => {
   return (
@@ -12,4 +27,4 @@ const Sidebar = ({ isMenuOpen, onOpen, onClose }) => {
   );
 };
 
-export default Sidebar;
+export default connect(mapStateToProps, mapDispatchToProps)(Sidebar);

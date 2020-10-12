@@ -6,10 +6,11 @@ import { AppBar, Toolbar, IconButton } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
 import useStyles from "./useStyles";
 import Sidebar from "./Sidebar";
-const Header = () => {
+const Header = ({ isMenuOpen, setIsMenuOpen }) => {
+  debugger;
   const classes = useStyles();
   const { isDarkMode, toggleDarkMode } = useContext(ThemeContext);
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  // const [isMenuOpen, setIsMenuOpen] = useState(false);
   const toggleSidebar = (open) => (event) => {
     if (
       event.type === "keydown" &&
@@ -17,7 +18,8 @@ const Header = () => {
     ) {
       return;
     }
-    setIsMenuOpen(open);
+    debugger;
+    setIsMenuOpen && setIsMenuOpen(open);
   };
   return (
     <>

@@ -7,7 +7,6 @@ const mapStateToProps = (state, ownProps) => {
   const { theme } = state.settings;
   const githubLink = fileUtils.getGithubCommitLink(hash, fileName);
   const filePath = fileUtils.getFileUri(hash, fileName);
-  debugger;
 
   return {
     hash,

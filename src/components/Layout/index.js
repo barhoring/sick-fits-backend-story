@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "./Header";
 import { CommitViewContainer } from "../../containers";
 import { Router } from "@reach/router";
@@ -7,14 +7,16 @@ import { SettingsPage, About } from "../../pages";
 import { ThemeProvider } from "../../ThemeContext";
 
 const Layout = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   return (
     <ThemeProvider>
-      <Header />
+      <Header isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
       <Router>
-        <CommitViewContainer path="/" />
+        <CommitViewContainer isMenuOpen={isMenuOpen} path="/" />
         <SettingsPage path="/settings/" />
         <About path="/about/" />
-        <CommitViewContainer default />
+        {/* <CommitViewContainer isMenuOpen={isMenuOpen} default /> */}
       </Router>
     </ThemeProvider>
   );

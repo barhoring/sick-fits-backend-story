@@ -13,8 +13,6 @@ import {
 import { Link } from "@reach/router";
 import Settings from "./Settings";
 
-import ThemeList from "../../components/Settings/ThemeList";
-
 import { BsCodeSlash } from "react-icons/bs";
 import { GoSettings } from "react-icons/go";
 import { GoHeart } from "react-icons/go";

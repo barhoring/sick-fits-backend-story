@@ -17,6 +17,7 @@ import {
 } from "@material-ui/core";
 import { StarBorder, ExpandLess, ExpandMore } from "@material-ui/icons";
 import InboxIcon from "@material-ui/icons/MoveToInbox";
+import ThemeSelect from "../Settings/ThemeSelect";
 
 const useStyles = makeStyles((theme) => ({
   list: {
@@ -42,44 +43,43 @@ const defineTheme = (theme) => {
       monaco.init(),
       import(`monaco-themes/themes/${monacoThemes[theme]}.json`),
     ]).then(([monaco, themeData]) => {
-      debugger;
       monaco.editor.defineTheme(theme, themeData);
       res();
     });
   });
 };
 
-export const ThemeSelect = ({ settings, addTheme, setTheme }) => {
-  console.log(settings);
-  const classes = useStyles();
-  const [currency, setCurrency] = React.useState("EUR");
+// export const ThemeSelect = ({ settings, addTheme, setTheme }) => {
+//   console.log(settings);
+//   const classes = useStyles();
+//   const [currency, setCurrency] = React.useState("EUR");
 
-  const handleChange = (event) => {
-    setCurrency(event.target.value);
-  };
+//   const handleChange = (event) => {
+//     setCurrency(event.target.value);
+//   };
 
-  return (
-    <form className={classes.root} noValidate autoComplete="off">
-      <div>
-        <TextField
-          id="outlined-select-theme"
-          select
-          label="theme"
-          value={currency}
-          onChange={handleChange}
-          helperText="select theme"
-          variant="outlined"
-        >
-          {Object.keys(monacoThemes).map((theme) => (
-            <MenuItem key={theme} value={theme}>
-              {monacoThemes[theme]}
-            </MenuItem>
-          ))}
-        </TextField>
-      </div>
-    </form>
-  );
-};
+//   return (
+//     <form className={classes.root} noValidate autoComplete="off">
+//       <div>
+//         <TextField
+//           id="outlined-select-theme"
+//           select
+//           label="theme"
+//           value={currency}
+//           onChange={handleChange}
+//           helperText="select theme"
+//           variant="outlined"
+//         >
+//           {Object.keys(monacoThemes).map((theme) => (
+//             <MenuItem key={theme} value={theme}>
+//               {monacoThemes[theme]}
+//             </MenuItem>
+//           ))}
+//         </TextField>
+//       </div>
+//     </form>
+//   );
+// };
 
 const Settings = ({ open, handleClick }) => {
   const classes = useStyles();
@@ -95,7 +95,7 @@ const Settings = ({ open, handleClick }) => {
       <Collapse in={open} timeout="auto" unmountOnExit>
         {/* <ThemeList /> */}
         <ThemeSelect />
-        <MenuSettingsContainer />
+        {/* <MenuSettingsContainer /> */}
         <List component="div" disablePadding>
           <ListItem button className={classes.nested}>
             <ListItemIcon>
