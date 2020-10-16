@@ -16,7 +16,7 @@ import {
   MenuItem,
 } from "@material-ui/core";
 import { StarBorder, ExpandLess, ExpandMore } from "@material-ui/icons";
-import InboxIcon from "@material-ui/icons/MoveToInbox";
+import SettingsIcon from "@material-ui/icons/Settings";
 import ThemeSelect from "../Settings/ThemeSelect";
 
 const useStyles = makeStyles((theme) => ({
@@ -49,50 +49,23 @@ const defineTheme = (theme) => {
   });
 };
 
-// export const ThemeSelect = ({ settings, addTheme, setTheme }) => {
-//   console.log(settings);
-//   const classes = useStyles();
-//   const [currency, setCurrency] = React.useState("EUR");
-
-//   const handleChange = (event) => {
-//     setCurrency(event.target.value);
-//   };
-
-//   return (
-//     <form className={classes.root} noValidate autoComplete="off">
-//       <div>
-//         <TextField
-//           id="outlined-select-theme"
-//           select
-//           label="theme"
-//           value={currency}
-//           onChange={handleChange}
-//           helperText="select theme"
-//           variant="outlined"
-//         >
-//           {Object.keys(monacoThemes).map((theme) => (
-//             <MenuItem key={theme} value={theme}>
-//               {monacoThemes[theme]}
-//             </MenuItem>
-//           ))}
-//         </TextField>
-//       </div>
-//     </form>
-//   );
-// };
-
 const Settings = ({ open, handleClick }) => {
   const classes = useStyles();
   return (
     <>
       <ListItem button onClick={handleClick}>
         <ListItemIcon>
-          <InboxIcon />
+          <SettingsIcon />
         </ListItemIcon>
         <ListItemText primary="Settings" />
         {open ? <ExpandLess /> : <ExpandMore />}
       </ListItem>
-      <Collapse in={open} timeout="auto" unmountOnExit>
+      <Collapse
+        in={open}
+        timeout="auto"
+        unmountOnExit
+        style={{ marginLeft: "2rem" }}
+      >
         {/* <ThemeList /> */}
         <ThemeSelect />
         {/* <MenuSettingsContainer /> */}

@@ -2,7 +2,6 @@ import React from "react";
 import { CommitContainer, CommitSelectorContainer } from "../../containers";
 
 const CommitView = () => {
-  debugger;
   return (
     <div>
       {" "}

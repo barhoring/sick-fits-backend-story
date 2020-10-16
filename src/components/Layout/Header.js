@@ -1,5 +1,7 @@
 import { FormControlLabel, Switch } from "@material-ui/core/";
 import React, { useContext, useState } from "react";
+import { Link } from "@reach/router";
+
 import { ThemeContext } from "../../ThemeContext";
 import Typography from "@material-ui/core/Typography";
 import { AppBar, Toolbar, IconButton } from "@material-ui/core";
@@ -7,7 +9,6 @@ import MenuIcon from "@material-ui/icons/Menu";
 import useStyles from "./useStyles";
 import Sidebar from "./Sidebar";
 const Header = () => {
-  debugger;
   const classes = useStyles();
   const { isDarkMode, toggleDarkMode } = useContext(ThemeContext);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -40,9 +41,11 @@ const Header = () => {
               <MenuIcon />
             </IconButton>
             <div>
-              <Typography className={classes.title} variant="h5">
-                git:story
-              </Typography>
+              <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
+                <Typography className={classes.title} variant="h5">
+                  git:story
+                </Typography>
+              </Link>
             </div>
 
             <FormControlLabel

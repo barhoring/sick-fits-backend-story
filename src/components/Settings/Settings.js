@@ -82,6 +82,7 @@ import {
 } from "@material-ui/core";
 import { StarBorder, ExpandLess, ExpandMore } from "@material-ui/icons";
 import InboxIcon from "@material-ui/icons/MoveToInbox";
+import SettingsIcon from "@material-ui/icons/Settings";
 
 const useStyles = makeStyles((theme) => ({
   list: {

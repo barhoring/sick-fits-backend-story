@@ -7,9 +7,9 @@ import useStyles from "./useStyles";
 import { FileNameHeading, GithubLink } from "../../components";
 import { fetchRawGithubFile } from "./helpers";
 
-const Editor = ({ filePath, fileName, githubLink, theme }) => {
+const Editor = ({ filePath, fileName, githubLink }) => {
   const classes = useStyles();
-  const { isDarkMode } = useContext(ThemeContext);
+  const { isDarkMode, theme } = useContext(ThemeContext);
   const [text, setText] = useState(null);
   // fetch the file from raw github
 

@@ -6,6 +6,20 @@ import { ThemeContext } from "../../ThemeContext";
 import { Card, CardActions, CardContent } from "@material-ui/core/";
 import { FileNameHeading, GithubLink } from "../../components";
 import useStyles from "./useStyles";
+import { monaco } from "@monaco-editor/react";
+import monacoThemes from "monaco-themes/themes/themelist";
+
+const defineTheme = (theme) => {
+  return new Promise((res) => {
+    Promise.all([
+      monaco.init(),
+      import(`monaco-themes/themes/${monacoThemes[theme]}.json`),
+    ]).then(([monaco, themeData]) => {
+      monaco.editor.defineTheme(theme, themeData);
+      res();
+    });
+  });
+};
 
 const DiffEditor = ({
   modifiedFilePath,
@@ -34,9 +48,13 @@ const DiffEditor = ({
       });
   }, []);
 
-  const { isDarkMode } = React.useContext(ThemeContext);
+  const { isDarkMode, theme } = React.useContext(ThemeContext);
+
+  defineTheme(theme);
 
   const classes = useStyles();
+  console.log("theme:", theme);
+
   return (
     <div style={{ display: "flex", justifyContent: "center" }}>
       <Card className={classes.root} variant="outlined">
@@ -46,11 +64,14 @@ const DiffEditor = ({
           </p>
           <div style={styles.root}>
             <MonacoDiffEditor
-              options={{ renderSideBySide: false }}
-              theme={isDarkMode ? "dark" : "light"}
+              height="100%"
+              options={{ renderSideBySide: true }}
+              theme={theme}
+              // theme={isDarkMode ? "dark" : "light"}
               original={originalText || ""}
               modified={modifiedText || ""}
-              language={"markdown"}
+              // language={"markdown"}
+              language={fileUtils.getLanguage(modifiedFilePath)}
             />
           </div>
         </CardContent>

@@ -7,10 +7,12 @@ const mapStateToProps = (state, ownnProps) => {
   const modifiedFilePath = fileUtils.getFileUri(hash, fileName);
   const originalFilePath = fileUtils.getFileUri(prevHash, fileName);
   const githubLink = fileUtils.getGithubCommitLink(hash, fileName);
+  const { theme } = state.settings;
   return {
     modifiedFilePath,
     originalFilePath,
     githubLink,
+    theme,
   };
 };
 

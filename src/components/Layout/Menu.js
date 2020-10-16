@@ -54,11 +54,6 @@ const getListItemComponent = (itemDetails, onClick) => {
 const menuItems = [
   { title: "Commits", path: "/", component: BsCodeSlash },
   {
-    title: "Settings",
-    path: "/settings",
-    component: GoSettings,
-  },
-  {
     title: "About",
     path: "/about",
     component: GoHeart,
@@ -82,10 +77,6 @@ const Menu = () => {
           return getListItemComponent(item);
         })} */}
         {menu}
-        {getListItemComponent(
-          { title: "Settings", path: "/", component: GoSettings },
-          handleClick
-        )}
         <Settings {...{ open, handleClick }} />
       </List>
     </div>
