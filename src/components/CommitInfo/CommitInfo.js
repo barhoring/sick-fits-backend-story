@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Paper } from "@material-ui/core";
+import { Button, Paper, Typography } from "@material-ui/core";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import useStyles from "./useStyles";
 import FileAccordion from "./FileAccordion";
@@ -27,16 +27,25 @@ const CommitInfo = ({
               <FileAccordion files={filesModify} title="files modified" />
             </div>
           </div>
-          <Button
-            className={classes.githubButton}
-            size="small"
-            target="_blank"
-            rel="noopener noreferrer"
-            href={commitGithubLink}
-          >
-            <GitHubIcon style={{ fontSize: "4rem" }} color="primary" />
-          </Button>
-          <p>Not showing deleted and renamed files</p>
+          <Typography variant="subtitle2" color="textSecondary">
+            <p>Not showing deleted and renamed files</p>
+          </Typography>
+          <Typography variant="subtitle2">
+            <Button
+              // className={classes.githubButton}
+              size="small"
+              target="_blank"
+              rel="noopener noreferrer"
+              href={commitGithubLink}
+              title="View this commit on github"
+            >
+              <GitHubIcon
+                // size="small"
+                style={{ fontSize: "3rem" }}
+                color="primary"
+              />
+            </Button>
+          </Typography>
         </Paper>
       </div>
     </>

@@ -19,6 +19,7 @@ const GithubLink = ({ commitGithubLink }) => {
           target="_blank"
           rel="noopener noreferrer"
           href={commitGithubLink}
+          title="view this commit on github"
         >
           {/* </Button> */}{" "}
           <GitHubIcon
