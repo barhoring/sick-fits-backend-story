@@ -1,4 +1,5 @@
 {
   "theme": "dark",
-  "downloadedThemes": ["light", "dark"]
+  "downloadedThemes": ["light", "dark"],
+  "renderSideBySide": false
 }

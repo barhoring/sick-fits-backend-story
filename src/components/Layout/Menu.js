@@ -11,7 +11,8 @@ import {
 } from "@material-ui/core";
 
 import { Link } from "@reach/router";
-import Settings from "./Settings";
+import { SettingsContainer } from "../../containers";
+// import Settings from "../../components/Settings";
 
 import { BsCodeSlash } from "react-icons/bs";
 import { GoSettings } from "react-icons/go";
@@ -64,20 +65,12 @@ const menu = menuItems.map((item) => getListItemComponent(item));
 
 const Menu = () => {
   const classes = useStyles();
-  const [open, setOpen] = React.useState(false);
-  const handleClick = () => {
-    setOpen(!open);
-  };
   return (
     <div className={classes.list} role="presentation">
       <List>
         <Divider />
-
-        {/* {menuItems.map((item, index) => {
-          return getListItemComponent(item);
-        })} */}
         {menu}
-        <Settings {...{ open, handleClick }} />
+        <SettingsContainer />
       </List>
     </div>
   );

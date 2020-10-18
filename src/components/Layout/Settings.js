@@ -3,6 +3,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import monacoThemes from "monaco-themes/themes/themelist";
 import { monaco } from "@monaco-editor/react";
 import { MenuSettingsContainer } from "../../containers";
+import { FormControlLabel, Switch } from "@material-ui/core/";
 
 import {
   Button,
@@ -75,6 +76,17 @@ const Settings = ({ open, handleClick }) => {
               <StarBorder />
             </ListItemIcon>
             <ListItemText primary="Starred" />
+            {/* <FormControlLabel
+              style={{ right: "1rem", position: "absolute" }}
+              control={
+                <Switch
+                  checked={isDarkMode}
+                  onChange={toggleDarkMode}
+                  name="darkMode"
+                />
+              }
+              label={isDarkMode ? "Dark" : "light"}
+            /> */}
           </ListItem>
         </List>
       </Collapse>

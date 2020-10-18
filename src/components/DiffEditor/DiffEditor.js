@@ -26,6 +26,7 @@ const DiffEditor = ({
   originalFilePath,
   githubLink,
   fileName,
+  renderSideBySide,
 }) => {
   const [originalText, setOriginalText] = useState(null);
   const [modifiedText, setModifiedText] = useState(null);
@@ -65,7 +66,7 @@ const DiffEditor = ({
           <div style={styles.root}>
             <MonacoDiffEditor
               height="100%"
-              options={{ renderSideBySide: true }}
+              options={{ renderSideBySide }}
               theme={theme}
               // theme={isDarkMode ? "dark" : "light"}
               original={originalText || ""}

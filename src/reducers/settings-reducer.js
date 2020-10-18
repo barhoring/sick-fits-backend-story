@@ -11,6 +11,12 @@ const settingsReducer = (state = defaultSettings, action) => {
     const downloadedThemes = [...state.downloadedThemes, theme];
     return { ...state, downloadedThemes };
   }
+
+  if (action.type === "SET_DIFF_EDITOR_RENDER_SIDE_BY_SIDE") {
+    const renderSideBySide = action.payload.value;
+    return { ...state, renderSideBySide };
+  }
+
   return state;
 };
 

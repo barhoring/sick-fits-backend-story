@@ -1,14 +1,11 @@
 import { Settings } from "../components";
 import { connect } from "react-redux";
-import { addTheme, setTheme } from "../actions/settings-actions";
-
+import { setDiffEditorRenderSideBySide } from "../actions/settings-actions";
 const mapStateToProps = (state) => {
-  const settings = state.settings;
+  const { renderSideBySide } = state.settings;
   return {
-    settings,
+    renderSideBySide,
   };
 };
-
-const mapDispatchToProps = { addTheme, setTheme };
-
+const mapDispatchToProps = { setDiffEditorRenderSideBySide };
 export default connect(mapStateToProps, mapDispatchToProps)(Settings);
