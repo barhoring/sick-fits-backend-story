@@ -6,7 +6,7 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
     flexGrow: 1,
     // backgroundColor: "blue",
-    backgroundColor: theme.palette.grey["100"],
+    backgroundColor: theme.palette.grey["300"],
 
     // flexWrap: "wrap",
     "& > *": {

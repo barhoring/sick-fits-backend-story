@@ -57,7 +57,7 @@ const DiffEditor = ({
 
   return (
     <div style={{ display: "flex", justifyContent: "center" }}>
-      <Card className={classes.root} variant="outlined">
+      <Card className={classes.root} variant="outlined" square={true}>
         <CardContent>
           <p id={fileName}>
             <FileNameHeading link={githubLink} fileName={fileName} />

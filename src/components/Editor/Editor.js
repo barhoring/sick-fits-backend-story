@@ -19,7 +19,7 @@ const Editor = ({ filePath, fileName, githubLink }) => {
 
   return (
     <div className={classes.container}>
-      <Card className={classes.root} variant="outlined">
+      <Card className={classes.root} variant="outlined" square={true}>
         <CardContent>
           {/* id is for an in-page anchor sent from the accordion */}
           <p id={fileName}>
