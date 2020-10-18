@@ -1,0 +1,87 @@
+{
+  "commits": {
+    "922c1a1f5aa344ad34d5edf41801713c798b54c2": {
+      "authorName": "Bar Horing Amir",
+      "autherEmail": "bar.apple@gmail.com",
+      "filesAdded": [
+        ".gitignore",
+        "package-lock.json",
+        "package.json",
+        "public/index.html",
+        "src/index.js"
+      ],
+      "filesModify": [],
+      "filesDeleted": [],
+      "filesRenamed": []
+    },
+    "709016edce20bab293452675e98415e0d68bcbef": {
+      "authorName": "Bar Horing Amir",
+      "autherEmail": "bar.apple@gmail.com",
+      "filesAdded": [],
+      "filesModify": ["src/index.js"],
+      "filesDeleted": [],
+      "filesRenamed": []
+    },
+    "929df365b8d499080ef3092b8e1364d15e336d25": {
+      "authorName": "Bar Horing Amir",
+      "autherEmail": "bar.apple@gmail.com",
+      "filesAdded": [],
+      "filesModify": ["src/index.js"],
+      "filesDeleted": [],
+      "filesRenamed": []
+    },
+    "6af94c3893e786610ffc76537fa167bbd0502cff": {
+      "authorName": "Bar Horing Amir",
+      "autherEmail": "bar.apple@gmail.com",
+      "filesAdded": [],
+      "filesModify": ["src/index.js"],
+      "filesDeleted": [],
+      "filesRenamed": []
+    },
+    "c5af1a42804bf94e75149d5bb03ce6aacf4b4478": {
+      "authorName": "Bar Horing Amir",
+      "autherEmail": "bar.apple@gmail.com",
+      "filesAdded": [],
+      "filesModify": ["src/index.js"],
+      "filesDeleted": [],
+      "filesRenamed": []
+    },
+    "ce3ceb6bc3c31bdefbfcec9a1a9aa534e974f034": {
+      "authorName": "Bar Horing Amir",
+      "autherEmail": "bar.apple@gmail.com",
+      "filesAdded": [],
+      "filesModify": ["src/index.js"],
+      "filesDeleted": [],
+      "filesRenamed": []
+    },
+    "2b0b47f28710c26cf34d165249654404d79c07a1": {
+      "authorName": "Bar Horing Amir",
+      "autherEmail": "bar.apple@gmail.com",
+      "filesAdded": [],
+      "filesModify": ["src/index.js"],
+      "filesDeleted": [],
+      "filesRenamed": []
+    },
+    "82147387f46f8914faf8ad65e086ee5d2bdcaf8e": {
+      "authorName": "Bar Horing Amir",
+      "autherEmail": "bar.apple@gmail.com",
+      "filesAdded": [],
+      "filesModify": ["src/index.js"],
+      "filesDeleted": [],
+      "filesRenamed": []
+    }
+  },
+  "ids": [
+    "922c1a1f5aa344ad34d5edf41801713c798b54c2",
+    "709016edce20bab293452675e98415e0d68bcbef",
+    "929df365b8d499080ef3092b8e1364d15e336d25",
+    "6af94c3893e786610ffc76537fa167bbd0502cff",
+    "c5af1a42804bf94e75149d5bb03ce6aacf4b4478",
+    "ce3ceb6bc3c31bdefbfcec9a1a9aa534e974f034",
+    "2b0b47f28710c26cf34d165249654404d79c07a1",
+    "82147387f46f8914faf8ad65e086ee5d2bdcaf8e"
+  ],
+  "currentHash": "922c1a1f5aa344ad34d5edf41801713c798b54c2",
+  "currentHashIndex": 0,
+  "prevHashIndex": null
+}

@@ -10,6 +10,7 @@ import FileNameHeading from "./FileNameHeading";
 import GithubLink from "./GithubLink";
 import CommitView from "./CommitView";
 import Settings from "./Settings";
+import Chapter from "./Chapter";
 
 export {
   Commit,
@@ -24,4 +25,5 @@ export {
   GithubLink,
   CommitView,
   Settings,
+  Chapter,
 };

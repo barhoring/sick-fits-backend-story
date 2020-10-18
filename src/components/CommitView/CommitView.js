@@ -1,10 +1,11 @@
 import React from "react";
 import { CommitContainer, CommitSelectorContainer } from "../../containers";
-
-const CommitView = () => {
+import { Chapter } from "../../components";
+const CommitView = ({ hash }) => {
   return (
-    <div>
+    <div style={{ marginTop: "10rem" }}>
       {" "}
+      <Chapter hash={hash} />
       <CommitSelectorContainer />
       <CommitContainer />
     </div>

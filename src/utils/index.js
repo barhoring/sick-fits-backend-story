@@ -1,4 +1,5 @@
 import rTabs from "./rTabs";
 import file from "./file";
+import fetchRawGithubFile from "./helpers";
 
-export { rTabs, file };
+export { rTabs, file, fetchRawGithubFile };
