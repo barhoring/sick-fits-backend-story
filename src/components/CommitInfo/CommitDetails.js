@@ -6,10 +6,10 @@ const CommitDetails = ({ hash, authorName }) => {
   const classes = useStyles();
   return (
     <>
-      <Divider component="hr" />
       <Typography variant="h4" gutterBottom>
         Commit Details
       </Typography>
+      <Divider component="hr" />
       <div>
         <p className={classes.commitDetails}>
           <Typography

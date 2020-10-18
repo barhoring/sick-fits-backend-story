@@ -3,10 +3,10 @@ import { CommitContainer, CommitSelectorContainer } from "../../containers";
 import { Chapter } from "../../components";
 const CommitView = ({ hash }) => {
   return (
-    <div style={{ marginTop: "10rem" }}>
+    <div style={{ marginTop: "2rem" }}>
       {" "}
-      <Chapter hash={hash} />
       <CommitSelectorContainer />
+      <Chapter hash={hash} />
       <CommitContainer />
     </div>
   );

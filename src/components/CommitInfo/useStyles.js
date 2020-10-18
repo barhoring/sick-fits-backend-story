@@ -2,14 +2,22 @@ import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
   paper: {
-    backgroundColor: theme.palette.grey["100"],
-    margin: theme.spacing(1),
     display: "flex",
     flexDirection: "column",
-    alignItems: "center",
+    // alignItems: "center",
+
+    width: "90%",
+    padding: "2rem",
   },
   root: {
+    justifyContent: "center",
+    display: "flex",
+    flexGrow: 1,
     width: "auto",
+    backgroundColor: theme.palette.grey["200"],
+    "& > *": {
+      margin: theme.spacing(1),
+    },
   },
   heading: {
     fontSize: theme.typography.pxToRem(15),

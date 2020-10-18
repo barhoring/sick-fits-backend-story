@@ -18,23 +18,27 @@ const CommitInfo = ({
 
   return (
     <>
-      <Paper className={classes.paper} elevation={1}>
-        <div className={classes.root}>
-          <CommitDetails {...{ hash, authorName }} />
-          <FileAccordion files={filesAdded} title=" files added" />
-          <FileAccordion files={filesModify} title="files modified" />
-        </div>
-        <Button
-          className={classes.githubButton}
-          size="small"
-          target="_blank"
-          rel="noopener noreferrer"
-          href={commitGithubLink}
-        >
-          <GitHubIcon style={{ fontSize: "4rem" }} color="primary" />
-        </Button>
-        <p>Not showing deleted and renamed files</p>
-      </Paper>
+      <div className={classes.root}>
+        <Paper className={classes.paper} elevation={1} square={true}>
+          <div>
+            <CommitDetails {...{ hash, authorName }} />
+            <div style={{ width: "25vw" }}>
+              <FileAccordion files={filesAdded} title=" files added" />
+              <FileAccordion files={filesModify} title="files modified" />
+            </div>
+          </div>
+          <Button
+            className={classes.githubButton}
+            size="small"
+            target="_blank"
+            rel="noopener noreferrer"
+            href={commitGithubLink}
+          >
+            <GitHubIcon style={{ fontSize: "4rem" }} color="primary" />
+          </Button>
+          <p>Not showing deleted and renamed files</p>
+        </Paper>
+      </div>
     </>
   );
 };
