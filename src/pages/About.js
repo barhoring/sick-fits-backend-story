@@ -11,12 +11,26 @@ const useStyles = makeStyles((theme) => ({
     fontFamily: "Secular One",
     color: "inherit",
   },
+  // root: {
+  //   // border: "1px solid",
+  //   display: "flex",
+  //   flexDirection: "column",
+  //   // flexGrow: 1,
+  //   // marginTop: theme.spacing(5),
+  // },
+  // root: {
+  //   justifyContent: "center",
+  //   display: "flex",
+  //   flexGrow: 1,
+  //   width: "auto",
+  //   backgroundColor: theme.palette.grey["200"],
+  //   "& > *": {
+  //     margin: theme.spacing(1),
+  //   },
+  // },
   root: {
-    // border: "1px solid",
-    display: "flex",
-    flexDirection: "column",
-    // flexGrow: 1,
-    // marginTop: theme.spacing(5),
+    width: "90%",
+    padding: "2rem",
   },
 }));
 
@@ -34,12 +48,37 @@ const About = (props) => {
           gutterBottom
           style={{ display: "felx", alignSelf: "center", width: "50%" }}
         >
-          Git is a powerful tool, but today git is mainly used as a boring way
-          of securely saving versions of your code. This is ok but I see all
-          this potential, and I see squandering. Git could be a GREAT
-          educational tool, telling the story of how your code incrementally
-          transforms. This is why I created GitStory
+          Git is a powerful tool, but today git is mainly used as a way of
+          either saving versions of your code or as a way to sync up the
+          codebase. While this is ok, I couldn't stand aside while Git's GREAT
+          potential as an educational tool is squandering.
         </Typography>
+        <img style={{ maxWidth: "300px" }} src="/images/git_1.png" />
+        <Typography
+          variant="body1"
+          gutterBottom
+          style={{ display: "felx", alignSelf: "center", width: "50%" }}
+        >
+          Like the victorious git allows you to amend history, Telling the story
+          of how your code incrementally transforms. Git Story will allow you to
+          understand new topics and ideas in code quickly.
+        </Typography>
+        <Typography
+          variant="body1"
+          gutterBottom
+          style={{ display: "felx", alignSelf: "center", width: "50%" }}
+        >
+          I used to work in a big corporate where my colleagues and I were
+          frustrated to understand the humongous codebase we were working on.
+          How can I make the life of the next developer to work on this problem
+          a lot easier? I used to work in a big corporate where the codebase was
+          big, old, and complex. it was so humongous, new features being added
+          to the application had to be chunked into multiple different commits
+          made on a span of a couple of weeks or mo. Those commits were a mere
+          drop in an ocean of other commits made by other developers in the
+          team.
+        </Typography>
+        <img style={{ maxWidth: "300px" }} src="/images/git_3.png" />
       </div>
     </div>
   );
