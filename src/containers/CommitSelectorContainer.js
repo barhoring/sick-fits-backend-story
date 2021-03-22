@@ -16,10 +16,10 @@ const mapDispatchToProps = {
 const mapStateToProps = (state) => {
   const { hashIndex, prevHashIndex } = state.hashes;
   return {
-    currentHash: state.commits.ids[hashIndex],
-    prevHash: state.commits.ids[prevHashIndex],
+    currentHash: state.hashes.ids[hashIndex],
+    prevHash: state.hashes.ids[prevHashIndex],
     hashIndex,
-    ids: state.commits.ids,
+    ids: state.hashes.ids,
   };
 };
 

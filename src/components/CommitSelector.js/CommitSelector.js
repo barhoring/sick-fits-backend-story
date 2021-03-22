@@ -48,7 +48,7 @@ const CommitSelector = ({
               hashSet(e.target.value);
             }}
           >
-            {ids.map((id, index) => {
+            {ids?.map((id, index) => {
               return (
                 <MenuItem index={index} value={id}>
                   {id.slice(0, 10)}

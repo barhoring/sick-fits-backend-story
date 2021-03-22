@@ -3,8 +3,8 @@ import { connect } from "react-redux";
 
 const mapStateToProps = (state) => {
   const { hashIndex } = state.hashes;
-  const hash = state.commits.ids[hashIndex];
-  const data = state.commits.commits[hash];
+  const hash = state.hashes.ids[hashIndex];
+  const data = state.hashes.ids[hash];
   return {
     hash,
     data,

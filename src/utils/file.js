@@ -22,6 +22,7 @@ const getFileName = (file) => {
 };
 
 const uri_format = `https://raw.githubusercontent.com/barhoring`;
+// TODO change repo name to new repo
 const repoName = "reach-router";
 const getFileUri = (hash, fileName) => {
   const uri = `${uri_format}/${repoName}/${hash}/${fileName}`;
