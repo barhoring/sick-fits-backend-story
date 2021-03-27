@@ -6,6 +6,7 @@ const Created = ({ files, hash }) => {
     <div>
       {files &&
         files.map((file) => {
+          console.log("file: ", file);
           return (
             <EditorContainer
               key={`${hash}:${file}`}

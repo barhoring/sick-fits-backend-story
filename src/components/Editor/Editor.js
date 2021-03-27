@@ -18,17 +18,18 @@ const Editor = ({ filePath, fileName, githubLink }) => {
     fetchRawGithubFile(filePath, setText, setFileType);
   }, [filePath]);
 
-  const isImage = fileType?.includes("image"); 
+  const isImage  = fileType?.includes("image");
+  const isText = fileType?.includes("text");
   return (
     <div className={classes.container}>
       <Card className={classes.root} variant="outlined" square={true}>
         <CardContent>
-          {!isImage && 
+          {/* id is for an in-page anchor sent from the accordion */}
+          <p id={fileName}>
+            <FileNameHeading {...{ link: githubLink, fileName }} />
+          </p>
+          {isText && 
             <div>
-            {/* id is for an in-page anchor sent from the accordion */}
-            <p id={fileName}>
-              <FileNameHeading {...{ link: githubLink, fileName }} />
-            </p>
             <div className={classes.editor}>
               <MonacoEditor
                 value={text || ""}
@@ -41,6 +42,7 @@ const Editor = ({ filePath, fileName, githubLink }) => {
           </div>
           }
           {isImage && <img src={filePath} />}
+          {!isImage && !isText && <p>file type <i>{fileType}</i> is not supported</p>}
         </CardContent>
         <CardActions>
           <GithubLink commitGithubLink={githubLink} />
