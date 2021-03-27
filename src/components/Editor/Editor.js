@@ -11,34 +11,42 @@ const Editor = ({ filePath, fileName, githubLink }) => {
   const classes = useStyles();
   const { isDarkMode, theme } = useContext(ThemeContext);
   const [text, setText] = useState(null);
+  const [fileType, setFileType] = useState("");
   // fetch the file from raw github
 
   useEffect(() => {
-    fetchRawGithubFile(filePath, setText);
+    fetchRawGithubFile(filePath, setText, setFileType);
   }, [filePath]);
 
+  const isImage = fileType?.includes("image"); 
   return (
     <div className={classes.container}>
       <Card className={classes.root} variant="outlined" square={true}>
         <CardContent>
-          {/* id is for an in-page anchor sent from the accordion */}
-          <p id={fileName}>
-            <FileNameHeading {...{ link: githubLink, fileName }} />
-          </p>
-          <div className={classes.editor}>
-            <MonacoEditor
-              value={text || ""}
-              theme={theme}
-              // theme={"espresso-libre"}
-              // theme={isDarkMode ? "dark" : "light"}
-              language={fileUtils.getLanguage(filePath)}
-            />
+          {!isImage && 
+            <div>
+            {/* id is for an in-page anchor sent from the accordion */}
+            <p id={fileName}>
+              <FileNameHeading {...{ link: githubLink, fileName }} />
+            </p>
+            <div className={classes.editor}>
+              <MonacoEditor
+                value={text || ""}
+                theme={theme}
+                // theme={"espresso-libre"}
+                // theme={isDarkMode ? "dark" : "light"}
+                language={fileUtils.getLanguage(filePath)}
+              />
+            </div>
           </div>
+          }
+          {isImage && <img src={filePath} />}
         </CardContent>
         <CardActions>
           <GithubLink commitGithubLink={githubLink} />
         </CardActions>
       </Card>
+    {/* {fileType.contain("image") && <img src={githubLink} />} */}
     </div>
   );
 };

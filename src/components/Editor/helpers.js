@@ -1,5 +1,5 @@
 import axios from "axios";
-const fetchRawGithubFile = (filePath, setText) => {
+const fetchRawGithubFile = (filePath, setText, setFileType) => {
   axios
     .get(filePath)
     .then(function (response) {
@@ -12,6 +12,7 @@ const fetchRawGithubFile = (filePath, setText) => {
       } else {
         setText(response.data);
       }
+      setFileType(response?.headers?.["content-type"])
     })
     .catch(function (error) {
       // handle error

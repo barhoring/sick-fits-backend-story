@@ -23,13 +23,14 @@ const getFileName = (file) => {
 
 const uri_format = `https://raw.githubusercontent.com/barhoring`;
 // TODO change repo name to new repo
-const repoName = "reach-router";
+// const repoName = "reach-router";
+const repoName = "sick-fits-frontend";
 const getFileUri = (hash, fileName) => {
   const uri = `${uri_format}/${repoName}/${hash}/${fileName}`;
   return uri;
 };
 
-const githubCommitLink = `https://github.com/barhoring/reach-router/blob/`;
+const githubCommitLink = `https://github.com/barhoring/sick-fits-frontend/blob/`;
 const getGithubCommitLink = (hash, fileName) => {
   return `${githubCommitLink}/${hash}/${fileName}`;
 };
