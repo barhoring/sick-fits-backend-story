@@ -41,14 +41,13 @@ const Editor = ({ filePath, fileName, githubLink }) => {
             </div>
           </div>
           }
-          {isImage && <img src={filePath} />}
+          {isImage && <img src={filePath} alt={fileName} />}
           {!isImage && !isText && <p>file type <i>{fileType}</i> is not supported</p>}
         </CardContent>
         <CardActions>
           <GithubLink commitGithubLink={githubLink} />
         </CardActions>
       </Card>
-    {/* {fileType.contain("image") && <img src={githubLink} />} */}
     </div>
   );
 };

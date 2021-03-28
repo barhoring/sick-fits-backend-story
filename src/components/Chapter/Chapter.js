@@ -3,11 +3,13 @@ import MarkdownPreview from "@uiw/react-markdown-preview";
 import { fetchRawGithubFile } from "../../utils";
 import useStyles from "./useStyles";
 import { Paper } from "@material-ui/core";
-const filePath = `https://raw.githubusercontent.com/barhoring/gitty-markdown/master`;
+import { chapter_base_uri as filePath} from "../../repoSettings.json";
+// const filePath = `https://raw.githubusercontent.com/barhoring/gitty-markdown/master`;
 
 const Chapter = ({ hash }) => {
   const [text, setText] = useState("");
   const classes = useStyles();
+  if (!filePath) return null;
   fetchRawGithubFile(`${filePath}/${hash}.md`, setText);
   return (
     <div>
