@@ -8,7 +8,7 @@ const { repoName, uri_format, githubCommitLink } = repoSettings;
 const getLanguage = (file) => {
   const ext = getExt(file);
   if (ext === "js") return "javascript";
-  if (ext === "ts") return "typecript";
+  if (ext === "ts") return "typescript";
   if (ext === "json") return "json";
   if (ext === "html") return "html";
   if (ext === "css") return "css";
