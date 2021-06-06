@@ -10,7 +10,7 @@ import useStyles from "./useStyles";
 import CommitNavButton from "./CommitNavButton";
 import { Link } from "@reach/router";
 import { navigate } from "@reach/router"
-
+import { redirectTo } from "@reach/router"
 
 
 const CommitSelector = ({
@@ -66,13 +66,15 @@ const CommitSelector = ({
             //   // hashSet(e.target.value);
             // }}
             onChange={event => {
-            const { value } = event.target;
-              navigate(`/commits/${value}`)
+              debugger;
+              const { value } = event.target;
+              redirectTo(`/commits/${value}`);
+              // navigate(`/commits/${value}`)
              }}
           >
             {ids?.map((id, index) => {
               return (
-                <MenuItem index={index} value={id}>
+                <MenuItem key={id} index={index} value={id}>
                   {id.slice(0, 10)}
                 </MenuItem>
               );

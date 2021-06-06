@@ -6,13 +6,12 @@ import { ModifiedContainer } from "../../containers";
 const Commit = ({ hash, data, commitId,
   prevHash,
   nextHash }) => {
-    
-    console.dir( { hash, prevHash, nextHash})
-    debugger;
+
   return (
     <>
       <CommitInfoContainer hash={hash} />
-      <ModifiedContainer hash={hash} />
+      {/* todo modified prev  */}
+      <ModifiedContainer hash={hash} prevHash={prevHash} />
       <AddedFilesContainer hash={hash} />
     </>
   );

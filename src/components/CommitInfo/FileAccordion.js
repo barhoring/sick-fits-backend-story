@@ -32,7 +32,7 @@ const FileAccordion = ({ files, title }) => {
         >
           {files.map((file, index) => {
             return (
-              <div style={{ textAlign: "start" }}>
+              <div key={file} style={{ textAlign: "start" }}>
                 <a href={`#${file}`}>{file}</a>
               </div>
             );

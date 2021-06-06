@@ -34,6 +34,7 @@ const getListItemComponent = (itemDetails, onClick) => {
   const Component = itemDetails.component;
   return (
     <Link
+      key={itemDetails}
       to={itemDetails.path}
       style={{ textDecoration: "none", color: "inherit" }}
     >

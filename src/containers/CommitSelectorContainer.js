@@ -31,8 +31,6 @@ const mapStateToProps = (state, ownProps) => {
   } = ownProps;
   
   // fetch hash from uri 
-  console.dir({hash, prevHash, nextHash});
-  console.log(state);
   return {
     currentHash: hash,
     nextHash,

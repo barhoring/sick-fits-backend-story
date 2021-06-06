@@ -7,7 +7,6 @@ const filePath = `https://raw.githubusercontent.com/barhoring/gitty-markdown/mas
 const markdown =
   "#fucjk]\n```js var React = require('react');\n var Markdown = require('react-markdown');\n```";
 const Chapter = ({ hash }) => {
-  debugger;
   const [text, setText] = useState("");
   fetchRawGithubFile(`${filePath}/${hash}.md`, setText);
   return (

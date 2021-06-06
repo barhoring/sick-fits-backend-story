@@ -54,7 +54,6 @@ const DiffEditor = ({
   defineTheme(theme);
 
   const classes = useStyles();
-  console.log("theme:", theme);
 
   return (
     <div style={{ display: "flex", justifyContent: "center" }}>

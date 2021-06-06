@@ -35,7 +35,6 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const About = (props) => {
-  console.log(props);
   const classes = useStyles();
   return (
     <div>

@@ -3,25 +3,22 @@ import { CommitContainer, CommitSelectorContainer } from "../../containers";
 import { Chapter } from "../../components";
 // import filePath from "../../repoSettings.json";
 import { chapter_base_uri as filePath} from "../../repoSettings.json";
+import { navigate, redirectTo } from "@reach/router";
 
 
-const CommitView = ({ hash , commitId, navigate, firstHash, prevHash, nextHash
-}) => {
-  // useEffect(() => {
-  //   if (!commitId) {
-  //     navigate(`/commits/${firstHash}`);
-  //   }
-  // }, [commitId, firstHash, navigate])
+const CommitView = ({ hash , prevHash, nextHash }) => {
+
+  if (!hash) {
+    navigate(`/commits/a6d5b6824251cded54b2ab5c8065545d6fc2476e`);
+  }
+
   const selectorProps = {prevHash, nextHash, hash, };
-  const commitProps = { hash };
+  const commitProps = { hash, prevHash };
   return (
     <div style={{ marginTop: "5rem" }}>
       {" "}
-      <div>wtf { hash }</div>
       <CommitSelectorContainer {...selectorProps} />
       {filePath && (<Chapter hash={hash} /> )}
-      {/* <div>"filePath" {filePath || "null"}</div> */}
-      {/* todo */}
       <CommitContainer {...commitProps} />
       {/* <CommitContainer commitId={commitId} /> */}
     </div>
