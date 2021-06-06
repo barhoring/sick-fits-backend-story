@@ -34,8 +34,6 @@ const Editor = ({ filePath, fileName, githubLink }) => {
               <MonacoEditor
                 value={text || ""}
                 theme={theme}
-                // theme={"espresso-libre"}
-                // theme={isDarkMode ? "dark" : "light"}
                 language={fileUtils.getLanguage(filePath)}
               />
             </div>

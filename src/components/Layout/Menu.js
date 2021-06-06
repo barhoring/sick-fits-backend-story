@@ -1,13 +1,11 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import {
-  Button,
   List,
   Divider,
   ListItem,
   ListItemIcon,
   ListItemText,
-  Collapse,
 } from "@material-ui/core";
 
 import { Link } from "@reach/router";

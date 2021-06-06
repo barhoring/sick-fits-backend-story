@@ -62,34 +62,6 @@ const hashReducer = (state = defaultState, action) => {
       prevHashIndex,
     };
   }
-  if (action.type === "HASH_SET") {
-    // find hash index
-    const { hash } = action.payload;
-    const prevHashMapping = defaultState["prevHashMapping"] ;
-
-    const { next, prev } = prevHashMapping[hash];
-
-    // fetch previous and next hashes
-
-    const { ids } = state;
-    let newIndex = null;
-    for (const [i, value] of ids.entries()) {
-      console.log("%d: %s", i, value);
-      if (value === hash) {
-        newIndex = i;
-        console.log("found!");
-      }
-    }
-    return {
-      thisHash: hash,
-      ids,
-      prevHash: prev,
-      nextHash: next,
-      hashIndex: newIndex,
-      prevHashIndex: newIndex - 1,
-    };
-  }
-
   return state;
 };
 

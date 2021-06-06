@@ -1,9 +1,8 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { CommitContainer, CommitSelectorContainer } from "../../containers";
 import { Chapter } from "../../components";
-// import filePath from "../../repoSettings.json";
 import { chapter_base_uri as filePath} from "../../repoSettings.json";
-import { navigate, redirectTo } from "@reach/router";
+import { navigate } from "@reach/router";
 
 
 const CommitView = ({ hash , prevHash, nextHash }) => {
@@ -12,7 +11,6 @@ const CommitView = ({ hash , prevHash, nextHash }) => {
   if (!hash) {
     navigate(`/commits/a6d5b6824251cded54b2ab5c8065545d6fc2476e`,  { state: { name: "bar" }}, { replace: true });
     hash = 'a6d5b6824251cded54b2ab5c8065545d6fc2476e';
-    // navigate(`/commits/a6d5b6824251cded54b2ab5c8065545d6fc2476e`);
   }
 
   const selectorProps = {prevHash, nextHash, hash, };

@@ -11,9 +11,6 @@ const CommitInfo = ({
   authorName,
   filesAdded,
   filesModify,
-  filesDeleted,
-  filesRenamed,
-  commitId
 }) => {
   const classes = useStyles();
 
@@ -33,7 +30,6 @@ const CommitInfo = ({
           </Typography>
           <Typography variant="subtitle2">
             <Button
-              // className={classes.githubButton}
               size="small"
               target="_blank"
               rel="noopener noreferrer"
@@ -41,7 +37,6 @@ const CommitInfo = ({
               title="View this commit on github"
             >
               <GitHubIcon
-                // size="small"
                 style={{ fontSize: "3rem" }}
                 color="primary"
               />

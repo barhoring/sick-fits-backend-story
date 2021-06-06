@@ -48,7 +48,6 @@ export const ThemeSelect = ({ settings, addTheme, setTheme }) => {
 
   const handleChange = (event) => {
     console.log(event.target.event);
-    // setCurrency(event.target.value);
   };
 
   const allMonacoThemes = {

@@ -11,23 +11,6 @@ const useStyles = makeStyles((theme) => ({
     fontFamily: "Secular One",
     color: "inherit",
   },
-  // root: {
-  //   // border: "1px solid",
-  //   display: "flex",
-  //   flexDirection: "column",
-  //   // flexGrow: 1,
-  //   // marginTop: theme.spacing(5),
-  // },
-  // root: {
-  //   justifyContent: "center",
-  //   display: "flex",
-  //   flexGrow: 1,
-  //   width: "auto",
-  //   backgroundColor: theme.palette.grey["200"],
-  //   "& > *": {
-  //     margin: theme.spacing(1),
-  //   },
-  // },
   root: {
     width: "90%",
     padding: "2rem",

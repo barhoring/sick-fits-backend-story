@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Header from "./Header";
 import { CommitViewContainer } from "../../containers";
 import { Router } from "@reach/router";
@@ -15,7 +15,6 @@ const Layout = () => {
         <CommitViewContainer path="/commits/:commit_hash" />
         <SettingsPage path="/settings/" />
         <About path="/about/" />
-        {/* <CommitViewContainer isMenuOpen={isMenuOpen} default /> */}
       </Router>
     </ThemeProvider>
   );
