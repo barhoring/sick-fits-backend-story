@@ -5,10 +5,14 @@ const mapStateToProps = (state, ownProps) => {
   //   const { hash } = ownProps;
   const { hashIndex } = state.hashes;
   const hash = state.hashes.ids[hashIndex];
+  const { commitId } = ownProps;
   console.log("hash: ", hash);
+  const files = state.commits.commits[commitId].filesAdded;
   return {
-    hash,
-    files: state.commits.commits[hash].filesAdded,
+    commitId,
+    hash: commitId,
+    files,
+    // files: state.commits.commits[hash].filesAdded,
   };
 };
 

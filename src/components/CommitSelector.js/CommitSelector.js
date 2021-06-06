@@ -8,14 +8,23 @@ import {
 } from "@material-ui/core/";
 import useStyles from "./useStyles";
 import CommitNavButton from "./CommitNavButton";
+import { Link } from "@reach/router";
 
 const CommitSelector = ({
+  commitId,
   ids,
   hashIndex,
   currentHash,
   incrementHashIndex,
   decrementHashIndex,
   hashSet,
+  isFirstCommit,
+  isLastCommit,
+  nextCommitId,
+  prevCommitId,
+  prevHash,
+  nextHash,
+  thisHash
 }) => {
   const classes = useStyles();
   return (
@@ -29,12 +38,15 @@ const CommitSelector = ({
         }}
         className={classes.root}
       >
+      <Link to={`/commits/${prevHash}`}>
         <CommitNavButton
-          onClick={decrementHashIndex}
-          disabled={hashIndex === 0 ? true : false}
+          // onClick={decrementHashIndex}
+          disabled={isFirstCommit}
+          // disabled={hashIndex === 0 ? true : false}
         >
           Previous Commit
         </CommitNavButton>
+      </Link>
 
         <FormControl className={classes.formControl}>
           <InputLabel id="commit-selector-label" style={{ fontSize: "2rem" }}>
@@ -43,7 +55,7 @@ const CommitSelector = ({
           <Select
             labelId="commit-selector-label"
             id="demo-simple-select-helper"
-            value={currentHash}
+            value={currentHash || thisHash}
             onChange={(e) => {
               hashSet(e.target.value);
             }}
@@ -58,13 +70,15 @@ const CommitSelector = ({
           </Select>
           <FormHelperText>Chose commit to view</FormHelperText>
         </FormControl>
-
-        <CommitNavButton
-          onClick={incrementHashIndex}
-          disabled={hashIndex === ids.length - 1 ? true : false}
-        >
-          Next Commit
-        </CommitNavButton>
+        <Link to={`/commits/${nextHash}`}>
+          <CommitNavButton
+            // onClick={incrementHashIndex}
+            disabled={isLastCommit}
+            // disabled={hashIndex === ids.length - 1 ? true : false}
+          >
+            Next Commit
+          </CommitNavButton>
+        </Link>
       </div>
     </div>
   );

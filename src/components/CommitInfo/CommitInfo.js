@@ -13,6 +13,7 @@ const CommitInfo = ({
   filesModify,
   filesDeleted,
   filesRenamed,
+  commitId
 }) => {
   const classes = useStyles();
 

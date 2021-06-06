@@ -4,6 +4,7 @@ import { EditorContainer } from "../../containers";
 const Created = ({ files, hash }) => {
   return (
     <div>
+    hii {hash}
       {files &&
         files.map((file) => {
           console.log("file: ", file);

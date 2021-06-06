@@ -12,6 +12,8 @@ const Layout = () => {
       <Header />
       <Router>
         <CommitViewContainer path="/" />
+        <CommitViewContainer path="/commits" />
+        <CommitViewContainer path="/commits/:commit_hash" />
         <SettingsPage path="/settings/" />
         <About path="/about/" />
         {/* <CommitViewContainer isMenuOpen={isMenuOpen} default /> */}

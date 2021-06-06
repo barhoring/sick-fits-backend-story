@@ -10,7 +10,7 @@ import { monaco } from "@monaco-editor/react";
 import monacoThemes from "monaco-themes/themes/themelist";
 
 const defineTheme = (theme) => {
-  return new Promise((res) => {
+  return theme && monacoThemes[theme] && new Promise((res) => {
     Promise.all([
       monaco.init(),
       import(`monaco-themes/themes/${monacoThemes[theme]}.json`),
@@ -47,7 +47,7 @@ const DiffEditor = ({
           setOriginalText(values[1].data);
         }
       });
-  }, []);
+  }, [modifiedFilePath, originalFilePath]);
 
   const { isDarkMode, theme } = React.useContext(ThemeContext);
 
