@@ -3,17 +3,17 @@ import { AddedFilesContainer, CommitInfoContainer } from "../../containers";
 
 import { ModifiedContainer } from "../../containers";
 
-const Commit = ({ hash, data, commitId, thisHash,
+const Commit = ({ hash, data, commitId,
   prevHash,
   nextHash }) => {
     
-    console.dir( { thisHash, prevHash, nextHash})
+    console.dir( { hash, prevHash, nextHash})
     debugger;
   return (
     <>
-      <CommitInfoContainer commitId={thisHash} />
-      <ModifiedContainer commitId={thisHash} />
-      <AddedFilesContainer commitId={thisHash} />
+      <CommitInfoContainer hash={hash} />
+      <ModifiedContainer hash={hash} />
+      <AddedFilesContainer hash={hash} />
     </>
   );
 };

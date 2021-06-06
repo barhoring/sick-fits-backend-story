@@ -9,8 +9,12 @@ import {
 import useStyles from "./useStyles";
 import CommitNavButton from "./CommitNavButton";
 import { Link } from "@reach/router";
+import { navigate } from "@reach/router"
+
+
 
 const CommitSelector = ({
+  gotoHash,
   commitId,
   ids,
   hashIndex,
@@ -56,9 +60,15 @@ const CommitSelector = ({
             labelId="commit-selector-label"
             id="demo-simple-select-helper"
             value={currentHash || thisHash}
-            onChange={(e) => {
-              hashSet(e.target.value);
-            }}
+            // onChange={(e) => {
+            //   const { value } = e.target;
+            //   gotoHash(value);
+            //   // hashSet(e.target.value);
+            // }}
+            onChange={event => {
+            const { value } = event.target;
+              navigate(`/commits/${value}`)
+             }}
           >
             {ids?.map((id, index) => {
               return (

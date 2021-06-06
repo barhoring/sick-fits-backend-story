@@ -3,14 +3,13 @@ import { connect } from "react-redux";
 
 const mapStateToProps = (state, ownProps) => {
   //   const { hash } = ownProps;
-  const { hashIndex } = state.hashes;
-  const hash = state.hashes.ids[hashIndex];
-  const { commitId } = ownProps;
+  // const { hashIndex } = state.hashes;
+  // const hash = state.hashes.ids[hashIndex];
+  const { hash } = ownProps;
   console.log("hash: ", hash);
-  const files = state.commits.commits[commitId].filesAdded;
+  const files = state.commits.commits[hash].filesAdded;
   return {
-    commitId,
-    hash: commitId,
+    hash,
     files,
     // files: state.commits.commits[hash].filesAdded,
   };
