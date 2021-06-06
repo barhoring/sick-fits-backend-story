@@ -12,8 +12,9 @@ const mapStateToProps = (state, ownProps) => {
   debugger;
   if (!hash) {
     const { next, prev }  = state.hashes.prevHashMapping[firstHash];
-    navigate(`/commits/a6d5b6824251cded54b2ab5c8065545d6fc2476e`);
-    return { hash: firstHash, prevHash: prev, nextHash: next  }
+    // navigate(`/commits/a6d5b6824251cded54b2ab5c8065545d6fc2476e`);
+    return { prevHash: prev, nextHash: next };
+    // return { hash: firstHash, prevHash: prev, nextHash: next  }
   }
   const { next, prev }  = state.hashes.prevHashMapping[hash];
   return { hash, prevHash: prev, nextHash: next  };

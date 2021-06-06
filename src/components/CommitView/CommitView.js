@@ -8,8 +8,11 @@ import { navigate, redirectTo } from "@reach/router";
 
 const CommitView = ({ hash , prevHash, nextHash }) => {
 
+  
   if (!hash) {
-    navigate(`/commits/a6d5b6824251cded54b2ab5c8065545d6fc2476e`);
+    navigate(`/commits/a6d5b6824251cded54b2ab5c8065545d6fc2476e`,  { state: { name: "bar" }}, { replace: true });
+    hash = 'a6d5b6824251cded54b2ab5c8065545d6fc2476e';
+    // navigate(`/commits/a6d5b6824251cded54b2ab5c8065545d6fc2476e`);
   }
 
   const selectorProps = {prevHash, nextHash, hash, };
