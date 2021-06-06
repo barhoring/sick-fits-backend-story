@@ -45,7 +45,7 @@ const CommitSelector = ({
       <Link to={`/commits/${prevHash}`}>
         <CommitNavButton
           // onClick={decrementHashIndex}
-          disabled={isFirstCommit}
+          disabled={!prevHash}
           // disabled={hashIndex === 0 ? true : false}
         >
           Previous Commit
@@ -60,15 +60,10 @@ const CommitSelector = ({
             labelId="commit-selector-label"
             id="demo-simple-select-helper"
             value={currentHash || thisHash}
-            // onChange={(e) => {
-            //   const { value } = e.target;
-            //   gotoHash(value);
-            //   // hashSet(e.target.value);
-            // }}
             onChange={event => {
               debugger;
               const { value } = event.target;
-              redirectTo(`/commits/${value}`);
+              navigate(`/commits/${value}`, { replace: true});
               // navigate(`/commits/${value}`)
              }}
           >
@@ -85,7 +80,7 @@ const CommitSelector = ({
         <Link to={`/commits/${nextHash}`}>
           <CommitNavButton
             // onClick={incrementHashIndex}
-            disabled={isLastCommit}
+            disabled={!nextHash}
             // disabled={hashIndex === ids.length - 1 ? true : false}
           >
             Next Commit
