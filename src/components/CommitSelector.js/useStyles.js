@@ -1,5 +1,8 @@
 import { makeStyles } from "@material-ui/core/styles";
 const useStyles = makeStyles((theme) => ({
+  disabledLink: {
+    pointerEvents: "none"
+  },
   formControl: {
     margin: theme.spacing(1),
     minWidth: 120,

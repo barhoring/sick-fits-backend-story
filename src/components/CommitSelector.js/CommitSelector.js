@@ -30,7 +30,7 @@ const CommitSelector = ({
         }}
         className={classes.root}
       >
-      <Link to={`/commits/${prevHash}`}>
+      <Link to={`/commits/${prevHash}`} className={!prevHash ? classes.disabledLink : null}>
         <CommitNavButton
           disabled={!prevHash}
         >
@@ -62,7 +62,8 @@ const CommitSelector = ({
           </Select>
           <FormHelperText>Chose commit to view</FormHelperText>
         </FormControl>
-        <Link to={`/commits/${nextHash}`}>
+        <Link to={`/commits/${nextHash}`} className={!nextHash ? classes.disabledLink : null}>
+        {/* <Link to={nextHash ? `/commits/${nextHash}` : '/'}  className={!nextHash ? classes.disabledLink : null}> */}
           <CommitNavButton
             disabled={!nextHash}
           >
