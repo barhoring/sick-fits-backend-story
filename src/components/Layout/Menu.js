@@ -1,19 +1,19 @@
-import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
+import React from "react"
+import { makeStyles } from "@material-ui/core/styles"
 import {
   List,
   Divider,
   ListItem,
   ListItemIcon,
   ListItemText,
-} from "@material-ui/core";
+} from "@material-ui/core"
 
-import { Link } from "@reach/router";
-import { SettingsContainer } from "../../containers";
+import { Link } from "@reach/router"
+import { SettingsContainer } from "../../containers"
 // import Settings from "../../components/Settings";
 
-import { BsCodeSlash } from "react-icons/bs";
-import { GoHeart } from "react-icons/go";
+import { BsCodeSlash } from "react-icons/bs"
+import { GoHeart } from "react-icons/go"
 
 const useStyles = makeStyles((theme) => ({
   list: {
@@ -25,21 +25,17 @@ const useStyles = makeStyles((theme) => ({
   nested: {
     paddingLeft: theme.spacing(4),
   },
-}));
+}))
 
 const getListItemComponent = (itemDetails, onClick) => {
-  const Component = itemDetails.component;
+  const Component = itemDetails.component
   return (
     <Link
       key={itemDetails}
       to={itemDetails.path}
       style={{ textDecoration: "none", color: "inherit" }}
     >
-      <ListItem
-        button
-        key={itemDetails.title}
-        onClick={onClick ? onClick : null}
-      >
+      <ListItem button key={itemDetails.title} onClick={onClick ? onClick : null}>
         <ListItemIcon>
           <Component size="2rem" />
         </ListItemIcon>
@@ -47,8 +43,8 @@ const getListItemComponent = (itemDetails, onClick) => {
       </ListItem>
       <Divider />
     </Link>
-  );
-};
+  )
+}
 
 const menuItems = [
   { title: "Commits", path: "/", component: BsCodeSlash },
@@ -57,12 +53,12 @@ const menuItems = [
     path: "/about",
     component: GoHeart,
   },
-];
+]
 
-const menu = menuItems.map((item) => getListItemComponent(item));
+const menu = menuItems.map((item) => getListItemComponent(item))
 
 const Menu = () => {
-  const classes = useStyles();
+  const classes = useStyles()
   return (
     <div className={classes.list} role="presentation">
       <List>
@@ -71,6 +67,6 @@ const Menu = () => {
         <SettingsContainer />
       </List>
     </div>
-  );
-};
-export default Menu;
+  )
+}
+export default Menu

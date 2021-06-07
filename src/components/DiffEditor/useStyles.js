@@ -2,7 +2,6 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    // minWidth: 275,
     width: '90vw',
     backgroundColor: theme.palette.grey['100'],
     margin: theme.spacing(1),
