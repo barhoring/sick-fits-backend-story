@@ -1,4 +1,4 @@
-import state from "../defaultState.json";
+import state from "../meta-data/defaultState.json";
 
 const commitReducer = (commits = state, action) => {
   return state;

@@ -1,6 +1,6 @@
 // This code is more readable with if than switch IMO
 
-import repoSettings from "../repoSettings.json";
+import repoSettings from "../meta-data/repoSettings.json";
 
 
 const { repoName, uri_format, githubCommitLink } = repoSettings;

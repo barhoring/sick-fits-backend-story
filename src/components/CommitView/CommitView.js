@@ -1,7 +1,7 @@
 import React from "react";
 import { CommitContainer, CommitSelectorContainer } from "../../containers";
 import { Chapter } from "../../components";
-import { chapter_base_uri as filePath} from "../../repoSettings.json";
+import { chapter_base_uri as filePath} from "../../meta-data/repoSettings.json";
 import { navigate } from "@reach/router";
 
 

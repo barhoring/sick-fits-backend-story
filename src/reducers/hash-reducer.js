@@ -1,4 +1,4 @@
-import defaultState from "../hashDefaultState.json";
+import defaultState from "../meta-data/hashDefaultState.json";
 
 const prevHashMapping = {};
 
