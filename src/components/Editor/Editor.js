@@ -9,7 +9,7 @@ import { fetchRawGithubFile } from "./helpers";
 
 const Editor = ({ filePath, fileName, githubLink }) => {
   const classes = useStyles();
-  const { isDarkMode, theme } = useContext(ThemeContext);
+  const { theme } = useContext(ThemeContext);
   const [text, setText] = useState(null);
   const [fileType, setFileType] = useState("");
   // fetch the file from raw github

@@ -35,7 +35,7 @@ const About = (props) => {
           codebase. While this is ok, I couldn't stand aside while Git's GREAT
           potential as an educational tool is squandering.
         </Typography>
-        <img style={{ maxWidth: "300px" }} src="/images/git_1.png" />
+        <img style={{ maxWidth: "300px" }} src="/images/git_1.png" alt="git comics" />
         <Typography
           variant="body1"
           gutterBottom
@@ -60,7 +60,7 @@ const About = (props) => {
           drop in an ocean of other commits made by other developers in the
           team.
         </Typography>
-        <img style={{ maxWidth: "300px" }} src="/images/git_3.png" />
+        <img style={{ maxWidth: "300px" }} src="/images/git_3.png" alt="git commit history" />
       </div>
     </div>
   );

@@ -1,5 +1,4 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
 
 import {
   List,
@@ -10,30 +9,11 @@ import {
   FormControlLabel,
   Switch,
 } from "@material-ui/core";
-import { StarBorder, ExpandLess, ExpandMore } from "@material-ui/icons";
+import { ExpandLess, ExpandMore } from "@material-ui/icons";
 import SettingsIcon from "@material-ui/icons/Settings";
 import ThemeSelect from "./ThemeSelect";
 
-const useStyles = makeStyles((theme) => ({
-  list: {
-    width: 250,
-  },
-  fullList: {
-    width: "auto",
-  },
-  nested: {
-    paddingLeft: theme.spacing(4),
-  },
-  root: {
-    "& .MuiTextField-root": {
-      margin: theme.spacing(1),
-      width: "25ch",
-    },
-  },
-}));
-
 const Settings = ({ setDiffEditorRenderSideBySide, renderSideBySide }) => {
-  const classes = useStyles();
   const [open, setOpen] = React.useState(false);
   const handleClick = () => {
     setOpen(!open);
@@ -55,7 +35,6 @@ const Settings = ({ setDiffEditorRenderSideBySide, renderSideBySide }) => {
       >
         <ThemeSelect />
         <List component="div" disablePadding>
-          {/* <ListItem button className={classes.nested}> */}
           <FormControlLabel
             style={{ right: "1rem", position: "absolute" }}
             control={
@@ -69,7 +48,6 @@ const Settings = ({ setDiffEditorRenderSideBySide, renderSideBySide }) => {
             }
             label="Diff Editor: render side by side"
           />
-          {/* </ListItem> */}
         </List>
       </Collapse>
     </>

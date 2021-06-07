@@ -74,7 +74,6 @@ export const ThemeSelect = ({ settings, addTheme, setTheme }) => {
                 key={theme}
                 value={theme}
                 onClick={() => {
-                  debugger;
                   if (settings.downloadedThemes.includes(theme)) {
                     setEditorTheme(theme);
                   } else {

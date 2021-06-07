@@ -47,7 +47,6 @@ const CommitSelector = ({
             id="demo-simple-select-helper"
             value={currentHash || thisHash}
             onChange={event => {
-              debugger;
               const { value } = event.target;
               navigate(`/commits/${value}`, { replace: true});
              }}

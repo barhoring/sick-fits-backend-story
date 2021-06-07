@@ -5,7 +5,6 @@ const mapStateToProps = (state, ownProps) => {
   const firstHash  = state.hashes.ids[0];
   const { commit_hash: hash } = ownProps; 
 
-  debugger;
   if (!hash) {
     const { next, prev }  = state.hashes.prevHashMapping[firstHash];
     return { prevHash: prev, nextHash: next };

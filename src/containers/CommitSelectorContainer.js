@@ -2,8 +2,6 @@ import { CommitSelector } from "../components";
 import { connect } from "react-redux";
 
 const mapStateToProps = (state, ownProps) => {
-  const { hashIndex } = state.hashes;
-
   const {
     hash,
     prevHash,

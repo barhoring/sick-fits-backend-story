@@ -49,7 +49,7 @@ const DiffEditor = ({
       });
   }, [modifiedFilePath, originalFilePath]);
 
-  const { isDarkMode, theme } = React.useContext(ThemeContext);
+  const { theme } = React.useContext(ThemeContext);
 
   defineTheme(theme);
 

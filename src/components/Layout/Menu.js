@@ -13,7 +13,6 @@ import { SettingsContainer } from "../../containers";
 // import Settings from "../../components/Settings";
 
 import { BsCodeSlash } from "react-icons/bs";
-import { GoSettings } from "react-icons/go";
 import { GoHeart } from "react-icons/go";
 
 const useStyles = makeStyles((theme) => ({

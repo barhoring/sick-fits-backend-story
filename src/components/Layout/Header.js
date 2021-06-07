@@ -47,18 +47,18 @@ const Header = () => {
                 </Typography>
               </Link>
             </div>
-
-            <FormControlLabel
-              style={{ right: "1rem", position: "absolute" }}
-              control={
-                <Switch
-                  checked={isDarkMode}
-                  onChange={toggleDarkMode}
-                  name="darkMode"
-                />
-              }
-              label={isDarkMode ? "Dark" : "light"}
-            />
+            { false && (<FormControlLabel
+                style={{ right: "1rem", position: "absolute" }}
+                control={
+                  <Switch
+                    checked={isDarkMode}
+                    onChange={toggleDarkMode}
+                    name="darkMode"
+                  />
+                }
+                label={isDarkMode ? "Dark" : "light"}
+              />
+            )}
           </Toolbar>
         </AppBar>
       </div>

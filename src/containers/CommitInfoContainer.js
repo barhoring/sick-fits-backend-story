@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 import { file as fileUtils } from "../utils";
 
 const mapStateToProps = (state, ownProps) => {
-  debugger;
   const { hash } = ownProps;
   const data = state.commits.commits[hash];
   if (!data) {
