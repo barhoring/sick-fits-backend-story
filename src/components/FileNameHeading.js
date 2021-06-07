@@ -1,5 +1,5 @@
-import React from "react";
-import { Typography } from "@material-ui/core";
+import React from "react"
+import { Typography } from "@material-ui/core"
 
 const FileNameHeading = ({ fileName, link }) => {
   return (
@@ -8,7 +8,7 @@ const FileNameHeading = ({ fileName, link }) => {
         {fileName}
       </Typography>
     </>
-  );
-};
+  )
+}
 
-export default FileNameHeading;
+export default FileNameHeading

@@ -1,16 +1,16 @@
-import React, { useState } from "react";
-import MarkdownPreview from "@uiw/react-markdown-preview";
-import { fetchRawGithubFile } from "../../utils";
-import useStyles from "./useStyles";
-import { Paper } from "@material-ui/core";
-import { chapter_base_uri as filePath} from "../../meta-data/repoSettings.json";
+import React, { useState } from "react"
+import MarkdownPreview from "@uiw/react-markdown-preview"
+import { fetchRawGithubFile } from "../../utils"
+import useStyles from "./useStyles"
+import { Paper } from "@material-ui/core"
+import { chapter_base_uri as filePath } from "../../meta-data/repoSettings.json"
 // const filePath = `https://raw.githubusercontent.com/barhoring/gitty-markdown/master`;
 
 const Chapter = ({ hash }) => {
-  const [text, setText] = useState("");
-  const classes = useStyles();
-  if (!filePath) return null;
-  fetchRawGithubFile(`${filePath}/${hash}.md`, setText);
+  const [text, setText] = useState("")
+  const classes = useStyles()
+  if (!filePath) return null
+  fetchRawGithubFile(`${filePath}/${hash}.md`, setText)
   return (
     <div>
       <div className={classes.root}>
@@ -19,7 +19,7 @@ const Chapter = ({ hash }) => {
         </Paper>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Chapter;
+export default Chapter

@@ -1,9 +1,9 @@
-import React from "react";
-import { Typography, Divider } from "@material-ui/core";
-import useStyles from "./useStyles";
+import React from "react"
+import { Typography, Divider } from "@material-ui/core"
+import useStyles from "./useStyles"
 
 const CommitDetails = ({ hash, authorName }) => {
-  const classes = useStyles();
+  const classes = useStyles()
   return (
     <>
       <Typography variant="h4" gutterBottom>
@@ -12,11 +12,7 @@ const CommitDetails = ({ hash, authorName }) => {
       <Divider component="hr" />
       <div>
         <p className={classes.commitDetails}>
-          <Typography
-            className={classes.title}
-            color="textSecondary"
-            gutterBottom
-          >
+          <Typography className={classes.title} color="textSecondary" gutterBottom>
             Commit {hash}
           </Typography>
           <Typography variant="h5" component="h2">
@@ -28,7 +24,7 @@ const CommitDetails = ({ hash, authorName }) => {
         </p>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default CommitDetails;
+export default CommitDetails

@@ -1,8 +1,8 @@
-import React from "react";
-import { LayoutContainer } from "./containers";
-import { connect } from "react-redux";
+import React from "react"
+import { LayoutContainer } from "./containers"
+import { connect } from "react-redux"
 
-import "./App.css";
+import "./App.css"
 
 function App() {
   return (
@@ -12,11 +12,11 @@ function App() {
         <LayoutContainer />
       </div>
     </>
-  );
+  )
 }
 
 const mapStateToProps = (state) => {
-  return state;
-};
+  return state
+}
 
-export default connect(mapStateToProps, null)(App);
+export default connect(mapStateToProps, null)(App)

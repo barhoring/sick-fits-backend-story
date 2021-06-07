@@ -1,3 +1,3 @@
-const rTabs = (str) => str.trim().replace(/^ {4}/gm, '');
+const rTabs = (str) => str.trim().replace(/^ {4}/gm, "")
 
-export default rTabs;
+export default rTabs

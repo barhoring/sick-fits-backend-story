@@ -1,9 +1,9 @@
-import React from "react";
-import { Button, Paper, Typography } from "@material-ui/core";
-import GitHubIcon from "@material-ui/icons/GitHub";
-import useStyles from "./useStyles";
-import FileAccordion from "./FileAccordion";
-import CommitDetails from "./CommitDetails";
+import React from "react"
+import { Button, Paper, Typography } from "@material-ui/core"
+import GitHubIcon from "@material-ui/icons/GitHub"
+import useStyles from "./useStyles"
+import FileAccordion from "./FileAccordion"
+import CommitDetails from "./CommitDetails"
 
 const CommitInfo = ({
   hash,
@@ -12,7 +12,7 @@ const CommitInfo = ({
   filesAdded,
   filesModify,
 }) => {
-  const classes = useStyles();
+  const classes = useStyles()
 
   return (
     <>
@@ -36,16 +36,13 @@ const CommitInfo = ({
               href={commitGithubLink}
               title="View this commit on github"
             >
-              <GitHubIcon
-                style={{ fontSize: "3rem" }}
-                color="primary"
-              />
+              <GitHubIcon style={{ fontSize: "3rem" }} color="primary" />
             </Button>
           </Typography>
         </Paper>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default CommitInfo;
+export default CommitInfo

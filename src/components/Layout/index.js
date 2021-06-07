@@ -1,9 +1,9 @@
-import React from "react";
-import Header from "./Header";
-import { CommitViewContainer } from "../../containers";
-import { Router } from "@reach/router";
-import { SettingsPage, About } from "../../pages";
-import { ThemeProvider } from "../../ThemeContext";
+import React from "react"
+import Header from "./Header"
+import { CommitViewContainer } from "../../containers"
+import { Router } from "@reach/router"
+import { SettingsPage, About } from "../../pages"
+import { ThemeProvider } from "../../ThemeContext"
 
 const Layout = () => {
   return (
@@ -17,7 +17,7 @@ const Layout = () => {
         <About path="/about/" />
       </Router>
     </ThemeProvider>
-  );
-};
+  )
+}
 
-export default Layout;
+export default Layout

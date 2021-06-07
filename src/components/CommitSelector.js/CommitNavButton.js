@@ -1,5 +1,5 @@
-import React from "react";
-import { Button } from "@material-ui/core/";
+import React from "react"
+import { Button } from "@material-ui/core/"
 const CommitNavButton = ({ onClick, disabled, children }) => {
   return (
     <Button
@@ -11,7 +11,7 @@ const CommitNavButton = ({ onClick, disabled, children }) => {
     >
       {children}
     </Button>
-  );
-};
+  )
+}
 
-export default CommitNavButton;
+export default CommitNavButton

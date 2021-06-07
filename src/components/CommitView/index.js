@@ -1,3 +1,3 @@
-import CommitView from './CommitView';
+import CommitView from "./CommitView"
 
-export default CommitView;
+export default CommitView

@@ -1,5 +1,5 @@
-import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
+import React from "react"
+import { makeStyles } from "@material-ui/core/styles"
 
 import {
   List,
@@ -7,10 +7,10 @@ import {
   ListItemIcon,
   ListItemText,
   Collapse,
-} from "@material-ui/core";
-import { StarBorder, ExpandLess, ExpandMore } from "@material-ui/icons";
-import SettingsIcon from "@material-ui/icons/Settings";
-import ThemeSelect from "../Settings/ThemeSelect";
+} from "@material-ui/core"
+import { StarBorder, ExpandLess, ExpandMore } from "@material-ui/icons"
+import SettingsIcon from "@material-ui/icons/Settings"
+import ThemeSelect from "../Settings/ThemeSelect"
 
 const useStyles = makeStyles((theme) => ({
   list: {
@@ -28,10 +28,10 @@ const useStyles = makeStyles((theme) => ({
       width: "25ch",
     },
   },
-}));
+}))
 
 const Settings = ({ open, handleClick }) => {
-  const classes = useStyles();
+  const classes = useStyles()
   return (
     <>
       <ListItem button onClick={handleClick}>
@@ -58,7 +58,7 @@ const Settings = ({ open, handleClick }) => {
         </List>
       </Collapse>
     </>
-  );
-};
+  )
+}
 
-export default Settings;
+export default Settings

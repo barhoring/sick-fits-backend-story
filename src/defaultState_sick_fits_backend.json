@@ -139,10 +139,7 @@
       "authorName": "Bar Horing Amir",
       "autherEmail": "bar.apple@gmail.com",
       "filesAdded": ["components/Product.js", "lib/formatMoney.js"],
-      "filesModify": [
-        "components/Products.js",
-        "components/styles/ItemStyles.js"
-      ],
+      "filesModify": ["components/Products.js", "components/styles/ItemStyles.js"],
       "filesDeleted": [],
       "filesRenamed": []
     },

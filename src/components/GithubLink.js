@@ -1,6 +1,6 @@
-import React from "react";
-import GitHubIcon from "@material-ui/icons/GitHub";
-import { Button } from "@material-ui/core";
+import React from "react"
+import GitHubIcon from "@material-ui/icons/GitHub"
+import { Button } from "@material-ui/core"
 
 const GithubLink = ({ commitGithubLink }) => {
   return (
@@ -31,7 +31,7 @@ const GithubLink = ({ commitGithubLink }) => {
         </Button>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default GithubLink;
+export default GithubLink

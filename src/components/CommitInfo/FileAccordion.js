@@ -1,15 +1,15 @@
-import React from "react";
+import React from "react"
 import {
   Typography,
   Accordion,
   AccordionSummary,
   AccordionDetails,
-} from "@material-ui/core";
-import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-import useStyles from "./useStyles";
+} from "@material-ui/core"
+import ExpandMoreIcon from "@material-ui/icons/ExpandMore"
+import useStyles from "./useStyles"
 
 const FileAccordion = ({ files, title }) => {
-  const classes = useStyles();
+  const classes = useStyles()
 
   return (
     <Accordion disabled={files.length === 0 ? true : false}>
@@ -35,12 +35,12 @@ const FileAccordion = ({ files, title }) => {
               <div key={file} style={{ textAlign: "start" }}>
                 <a href={`#${file}`}>{file}</a>
               </div>
-            );
+            )
           })}
         </div>
       </AccordionDetails>
     </Accordion>
-  );
-};
+  )
+}
 
-export default FileAccordion;
+export default FileAccordion

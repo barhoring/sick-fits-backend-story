@@ -1,4 +1,4 @@
-import React from "react";
+import React from "react"
 
 import {
   List,
@@ -8,16 +8,16 @@ import {
   Collapse,
   FormControlLabel,
   Switch,
-} from "@material-ui/core";
-import { ExpandLess, ExpandMore } from "@material-ui/icons";
-import SettingsIcon from "@material-ui/icons/Settings";
-import ThemeSelect from "./ThemeSelect";
+} from "@material-ui/core"
+import { ExpandLess, ExpandMore } from "@material-ui/icons"
+import SettingsIcon from "@material-ui/icons/Settings"
+import ThemeSelect from "./ThemeSelect"
 
 const Settings = ({ setDiffEditorRenderSideBySide, renderSideBySide }) => {
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = React.useState(false)
   const handleClick = () => {
-    setOpen(!open);
-  };
+    setOpen(!open)
+  }
   return (
     <>
       <ListItem button onClick={handleClick}>
@@ -40,9 +40,7 @@ const Settings = ({ setDiffEditorRenderSideBySide, renderSideBySide }) => {
             control={
               <Switch
                 checked={renderSideBySide}
-                onChange={() =>
-                  setDiffEditorRenderSideBySide(!renderSideBySide)
-                }
+                onChange={() => setDiffEditorRenderSideBySide(!renderSideBySide)}
                 name="darkMode"
               />
             }
@@ -51,7 +49,7 @@ const Settings = ({ setDiffEditorRenderSideBySide, renderSideBySide }) => {
         </List>
       </Collapse>
     </>
-  );
-};
+  )
+}
 
-export default Settings;
+export default Settings

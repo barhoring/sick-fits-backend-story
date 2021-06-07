@@ -1,26 +1,23 @@
-import { FormControlLabel, Switch } from "@material-ui/core/";
-import React, { useContext, useState } from "react";
-import { Link } from "@reach/router";
+import { FormControlLabel, Switch } from "@material-ui/core/"
+import React, { useContext, useState } from "react"
+import { Link } from "@reach/router"
 
-import { ThemeContext } from "../../ThemeContext";
-import Typography from "@material-ui/core/Typography";
-import { AppBar, Toolbar, IconButton } from "@material-ui/core";
-import MenuIcon from "@material-ui/icons/Menu";
-import useStyles from "./useStyles";
-import Sidebar from "./Sidebar";
+import { ThemeContext } from "../../ThemeContext"
+import Typography from "@material-ui/core/Typography"
+import { AppBar, Toolbar, IconButton } from "@material-ui/core"
+import MenuIcon from "@material-ui/icons/Menu"
+import useStyles from "./useStyles"
+import Sidebar from "./Sidebar"
 const Header = () => {
-  const classes = useStyles();
-  const { isDarkMode, toggleDarkMode } = useContext(ThemeContext);
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const classes = useStyles()
+  const { isDarkMode, toggleDarkMode } = useContext(ThemeContext)
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
   const toggleSidebar = (open) => (event) => {
-    if (
-      event.type === "keydown" &&
-      (event.key === "Tab" || event.key === "Shift")
-    ) {
-      return;
+    if (event.type === "keydown" && (event.key === "Tab" || event.key === "Shift")) {
+      return
     }
-    setIsMenuOpen && setIsMenuOpen(open);
-  };
+    setIsMenuOpen && setIsMenuOpen(open)
+  }
   return (
     <>
       <div className={classes.root}>
@@ -33,11 +30,7 @@ const Header = () => {
               onOpen={toggleSidebar(true)}
               onClose={toggleSidebar(false)}
             />
-            <IconButton
-              color="inherit"
-              size="medium"
-              onClick={toggleSidebar(true)}
-            >
+            <IconButton color="inherit" size="medium" onClick={toggleSidebar(true)}>
               <MenuIcon />
             </IconButton>
             <div>
@@ -47,7 +40,8 @@ const Header = () => {
                 </Typography>
               </Link>
             </div>
-            { false && (<FormControlLabel
+            {false && (
+              <FormControlLabel
                 style={{ right: "1rem", position: "absolute" }}
                 control={
                   <Switch
@@ -63,7 +57,7 @@ const Header = () => {
         </AppBar>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header

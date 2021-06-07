@@ -1,15 +1,15 @@
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from "@material-ui/core/styles"
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    width: '90vw',
-    backgroundColor: theme.palette.grey['100'],
+    width: "90vw",
+    backgroundColor: theme.palette.grey["100"],
     margin: theme.spacing(1),
   },
   bullet: {
-    display: 'inline-block',
-    margin: '0 2px',
-    transform: 'scale(0.8)',
+    display: "inline-block",
+    margin: "0 2px",
+    transform: "scale(0.8)",
   },
   title: {
     fontSize: 14,
@@ -17,6 +17,6 @@ const useStyles = makeStyles((theme) => ({
   pos: {
     marginBottom: 12,
   },
-}));
+}))
 
-export default useStyles;
+export default useStyles

@@ -1,16 +1,16 @@
-import React from "react";
-import { Drawer } from "@material-ui/core";
-import Menu from "./Menu";
-import { connect } from "react-redux";
-import { setTheme } from "../../actions/settings-actions";
+import React from "react"
+import { Drawer } from "@material-ui/core"
+import Menu from "./Menu"
+import { connect } from "react-redux"
+import { setTheme } from "../../actions/settings-actions"
 
 const mapStateToProps = (state) => {
   return {
     theme: state.settings.theme,
-  };
-};
+  }
+}
 
-const mapDispatchToProps = { setTheme };
+const mapDispatchToProps = { setTheme }
 
 const Sidebar = ({ isMenuOpen, onOpen, onClose }) => {
   return (
@@ -19,7 +19,7 @@ const Sidebar = ({ isMenuOpen, onOpen, onClose }) => {
         <Menu />
       </Drawer>
     </div>
-  );
-};
+  )
+}
 
-export default connect(mapStateToProps, mapDispatchToProps)(Sidebar);
+export default connect(mapStateToProps, mapDispatchToProps)(Sidebar)

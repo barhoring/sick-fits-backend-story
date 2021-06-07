@@ -1,14 +1,14 @@
-import React, { useState } from "react";
-import ReactMarkdown from "react-markdown/with-html";
-import { fetchRawGithubFile } from "../../utils";
+import React, { useState } from "react"
+import ReactMarkdown from "react-markdown/with-html"
+import { fetchRawGithubFile } from "../../utils"
 
-const filePath = `https://raw.githubusercontent.com/barhoring/gitty-markdown/master`;
+const filePath = `https://raw.githubusercontent.com/barhoring/gitty-markdown/master`
 
 const markdown =
-  "#fucjk]\n```js var React = require('react');\n var Markdown = require('react-markdown');\n```";
+  "#fucjk]\n```js var React = require('react');\n var Markdown = require('react-markdown');\n```"
 const Chapter = ({ hash }) => {
-  const [text, setText] = useState("");
-  fetchRawGithubFile(`${filePath}/${hash}.md`, setText);
+  const [text, setText] = useState("")
+  fetchRawGithubFile(`${filePath}/${hash}.md`, setText)
   return (
     <div
       style={{
@@ -22,7 +22,7 @@ const Chapter = ({ hash }) => {
     >
       <ReactMarkdown source={text} />
     </div>
-  );
-};
+  )
+}
 
-export default Chapter;
+export default Chapter

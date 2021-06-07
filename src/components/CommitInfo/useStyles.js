@@ -1,21 +1,21 @@
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from "@material-ui/core/styles"
 
 const useStyles = makeStyles((theme) => ({
   paper: {
-    display: 'flex',
-    flexDirection: 'column',
+    display: "flex",
+    flexDirection: "column",
     // alignItems: "center",
 
-    width: '90%',
-    padding: '2rem',
+    width: "90%",
+    padding: "2rem",
   },
   root: {
-    justifyContent: 'center',
-    display: 'flex',
+    justifyContent: "center",
+    display: "flex",
     flexGrow: 1,
-    width: 'auto',
-    backgroundColor: theme.palette.grey['200'],
-    '& > *': {
+    width: "auto",
+    backgroundColor: theme.palette.grey["200"],
+    "& > *": {
       margin: theme.spacing(1),
     },
   },
@@ -24,13 +24,13 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: theme.typography.fontWeightRegular,
   },
   githubButton: {
-    width: 'auto',
-    margin: '1rem',
+    width: "auto",
+    margin: "1rem",
   },
   commitDetails: {
-    flexDirection: 'column',
-    display: 'flex',
-    justifyContent: 'flex-start',
+    flexDirection: "column",
+    display: "flex",
+    justifyContent: "flex-start",
   },
-}));
-export default useStyles;
+}))
+export default useStyles

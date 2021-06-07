@@ -1,5 +1,5 @@
 /* eslint-disable */
-import { rTabs } from "../utils";
+import { rTabs } from "../utils"
 
 const examples = {
   1: rTabs(`
@@ -1456,6 +1456,6 @@ const examples = {
       color: 0xFFEEBB
       text: Pretty vector drawing.
   `),
-};
+}
 
-export default examples;
+export default examples

@@ -1,6 +1,6 @@
-import React from "react";
+import React from "react"
 
-import { SettingsContainer } from "../containers";
+import { SettingsContainer } from "../containers"
 
 const SettingsPage = () => {
   return (
@@ -8,7 +8,7 @@ const SettingsPage = () => {
       <h1>settings</h1>
       <SettingsContainer />
     </div>
-  );
-};
+  )
+}
 
-export default SettingsPage;
+export default SettingsPage

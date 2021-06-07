@@ -1,25 +1,29 @@
-import React, { useState, useEffect } from "react";
-import { DiffEditor as MonacoDiffEditor } from "@monaco-editor/react";
-import { file as fileUtils } from "../../utils";
-import axios from "axios";
-import { ThemeContext } from "../../ThemeContext";
-import { Card, CardActions, CardContent } from "@material-ui/core/";
-import { FileNameHeading, GithubLink } from "../../components";
-import useStyles from "./useStyles";
-import { monaco } from "@monaco-editor/react";
-import monacoThemes from "monaco-themes/themes/themelist";
+import React, { useState, useEffect } from "react"
+import { DiffEditor as MonacoDiffEditor } from "@monaco-editor/react"
+import { file as fileUtils } from "../../utils"
+import axios from "axios"
+import { ThemeContext } from "../../ThemeContext"
+import { Card, CardActions, CardContent } from "@material-ui/core/"
+import { FileNameHeading, GithubLink } from "../../components"
+import useStyles from "./useStyles"
+import { monaco } from "@monaco-editor/react"
+import monacoThemes from "monaco-themes/themes/themelist"
 
 const defineTheme = (theme) => {
-  return theme && monacoThemes[theme] && new Promise((res) => {
-    Promise.all([
-      monaco.init(),
-      import(`monaco-themes/themes/${monacoThemes[theme]}.json`),
-    ]).then(([monaco, themeData]) => {
-      monaco.editor.defineTheme(theme, themeData);
-      res();
-    });
-  });
-};
+  return (
+    theme &&
+    monacoThemes[theme] &&
+    new Promise((res) => {
+      Promise.all([
+        monaco.init(),
+        import(`monaco-themes/themes/${monacoThemes[theme]}.json`),
+      ]).then(([monaco, themeData]) => {
+        monaco.editor.defineTheme(theme, themeData)
+        res()
+      })
+    })
+  )
+}
 
 const DiffEditor = ({
   modifiedFilePath,
@@ -28,32 +32,32 @@ const DiffEditor = ({
   fileName,
   renderSideBySide,
 }) => {
-  const [originalText, setOriginalText] = useState(null);
-  const [modifiedText, setModifiedText] = useState(null);
+  const [originalText, setOriginalText] = useState(null)
+  const [modifiedText, setModifiedText] = useState(null)
 
   useEffect(() => {
     axios
       .all([axios.get(modifiedFilePath), axios.get(originalFilePath)])
       .then((values) => {
         if (typeof values[0].data == "object") {
-          setModifiedText(fileUtils.objectToString(values[0].data));
+          setModifiedText(fileUtils.objectToString(values[0].data))
         } else {
-          setModifiedText(values[0].data);
+          setModifiedText(values[0].data)
         }
 
         if (typeof values[1].data == "object") {
-          setOriginalText(fileUtils.objectToString(values[1].data));
+          setOriginalText(fileUtils.objectToString(values[1].data))
         } else {
-          setOriginalText(values[1].data);
+          setOriginalText(values[1].data)
         }
-      });
-  }, [modifiedFilePath, originalFilePath]);
+      })
+  }, [modifiedFilePath, originalFilePath])
 
-  const { theme } = React.useContext(ThemeContext);
+  const { theme } = React.useContext(ThemeContext)
 
-  defineTheme(theme);
+  defineTheme(theme)
 
-  const classes = useStyles();
+  const classes = useStyles()
 
   return (
     <div style={{ display: "flex", justifyContent: "center" }}>
@@ -80,8 +84,8 @@ const DiffEditor = ({
         </CardActions>
       </Card>
     </div>
-  );
-};
+  )
+}
 
 const styles = {
   root: {
@@ -99,6 +103,6 @@ const styles = {
     marginTop: 20,
     marginBottom: 20,
   },
-};
+}
 
-export default DiffEditor;
+export default DiffEditor

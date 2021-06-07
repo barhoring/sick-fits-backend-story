@@ -1,3 +1,3 @@
-import DiffEditor from './DiffEditor';
+import DiffEditor from "./DiffEditor"
 
-export default DiffEditor;
+export default DiffEditor

@@ -1,5 +1,5 @@
-import React from "react";
-import { DiffEditorContainer } from "../../containers";
+import React from "react"
+import { DiffEditorContainer } from "../../containers"
 
 const Modified = ({ filesModified, hash, prevHash }) => {
   return (
@@ -7,16 +7,14 @@ const Modified = ({ filesModified, hash, prevHash }) => {
       {filesModified &&
         filesModified.map((file) => {
           return (
-
-              <DiffEditorContainer
-                key={`${hash}:${file}`}
-                {...{ hash, prevHash, fileName: file }}
-              />
-          );
+            <DiffEditorContainer
+              key={`${hash}:${file}`}
+              {...{ hash, prevHash, fileName: file }}
+            />
+          )
         })}
     </>
-  );
-};
+  )
+}
 
-export default Modified;
-
+export default Modified

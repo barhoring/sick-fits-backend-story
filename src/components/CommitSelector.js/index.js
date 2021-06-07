@@ -1,3 +1,3 @@
-import CommitSelector from './CommitSelector';
+import CommitSelector from "./CommitSelector"
 
-export default CommitSelector;
+export default CommitSelector

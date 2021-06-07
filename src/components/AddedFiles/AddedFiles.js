@@ -1,5 +1,5 @@
-import React from "react";
-import { EditorContainer } from "../../containers";
+import React from "react"
+import { EditorContainer } from "../../containers"
 
 const Created = ({ files, hash }) => {
   return (
@@ -7,14 +7,11 @@ const Created = ({ files, hash }) => {
       {files &&
         files.map((file) => {
           return (
-            <EditorContainer
-              key={`${hash}:${file}`}
-              {...{ fileName: file, hash }}
-            />
-          );
+            <EditorContainer key={`${hash}:${file}`} {...{ fileName: file, hash }} />
+          )
         })}
     </div>
-  );
-};
+  )
+}
 
-export default Created;
+export default Created

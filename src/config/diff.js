@@ -1,5 +1,5 @@
 /* eslint-disable */
-import { rTabs } from "../utils";
+import { rTabs } from "../utils"
 
 const examples = {
   original: rTabs(`
@@ -506,6 +506,6 @@ const examples = {
 
     [MIT](./LICENSE)
   `),
-};
+}
 
-export default examples;
+export default examples
