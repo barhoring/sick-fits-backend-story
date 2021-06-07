@@ -1,8 +1,6 @@
-import { Layout } from "../components";
-import { connect } from "react-redux";
+import { connect } from 'react-redux';
+import { Layout } from '../components';
 
-const mapStateToProps = (state, ownProps) => {
-  return state;
-};
+const mapStateToProps = (state) => state;
 
 export default connect(mapStateToProps)(Layout);

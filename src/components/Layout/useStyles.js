@@ -1,4 +1,4 @@
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
   menuButton: {
@@ -6,8 +6,8 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     flexGrow: 1,
-    fontFamily: "Secular One",
-    color: "inherit",
+    fontFamily: 'Secular One',
+    color: 'inherit',
   },
   root: {
     flexGrow: 1,
@@ -15,14 +15,14 @@ const useStyles = makeStyles((theme) => ({
   },
 
   brief: {
-    fontFamily: "Covered By Your Grace",
-    color: "",
+    fontFamily: 'Covered By Your Grace',
+    color: '',
   },
   flex: {
-    display: "flex",
+    display: 'flex',
   },
-  vertical: { flexDirection: "column" },
-  horizontal: { flexDirection: "row" },
+  vertical: { flexDirection: 'column' },
+  horizontal: { flexDirection: 'row' },
 }));
 
 export default useStyles;

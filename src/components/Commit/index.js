@@ -1,3 +1,3 @@
-import Commit from "./Commit";
+import Commit from './Commit';
 
 export default Commit;

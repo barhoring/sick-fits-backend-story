@@ -1,3 +1,3 @@
-import AddedFiles from "./AddedFiles";
+import AddedFiles from './AddedFiles';
 
 export default AddedFiles;

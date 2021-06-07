@@ -1,5 +1,5 @@
-import { Commit } from "../components";
-import { connect } from "react-redux";
+import { connect } from 'react-redux';
+import { Commit } from '../components';
 
 const mapStateToProps = (state, ownProps) => {
   const { hash, prevHash } = ownProps;
@@ -7,7 +7,7 @@ const mapStateToProps = (state, ownProps) => {
   return {
     hash,
     prevHash,
-    nextHash
+    nextHash,
   };
 };
 

@@ -1,5 +1,5 @@
-import { CommitSelector } from "../components";
-import { connect } from "react-redux";
+import { connect } from 'react-redux';
+import { CommitSelector } from '../components';
 
 const mapStateToProps = (state, ownProps) => {
   const {
@@ -7,7 +7,7 @@ const mapStateToProps = (state, ownProps) => {
     prevHash,
     nextHash,
   } = ownProps;
-  
+
   return {
     currentHash: hash,
     nextHash,

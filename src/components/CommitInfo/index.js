@@ -1,3 +1,3 @@
-import CommitInfo from "./CommitInfo";
+import CommitInfo from './CommitInfo';
 
 export default CommitInfo;

@@ -1,3 +1,3 @@
-import Chapter from "./Chapter";
+import Chapter from './Chapter';
 
 export default Chapter;

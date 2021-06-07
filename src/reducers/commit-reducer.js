@@ -1,7 +1,5 @@
-import state from "../meta-data/defaultState.json";
+import state from '../meta-data/defaultState.json';
 
-const commitReducer = (commits = state, action) => {
-  return state;
-};
+const commitReducer = (commits = state, action) => state;
 
 export default commitReducer;

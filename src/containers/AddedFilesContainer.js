@@ -1,5 +1,5 @@
-import { AddedFiles } from "../components";
-import { connect } from "react-redux";
+import { connect } from 'react-redux';
+import { AddedFiles } from '../components';
 
 const mapStateToProps = (state, ownProps) => {
   const { hash } = ownProps;

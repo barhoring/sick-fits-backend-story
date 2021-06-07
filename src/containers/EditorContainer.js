@@ -1,6 +1,6 @@
-import { Editor } from "../components";
-import { connect } from "react-redux";
-import { file as fileUtils } from "../utils";
+import { connect } from 'react-redux';
+import { Editor } from '../components';
+import { file as fileUtils } from '../utils';
 
 const mapStateToProps = (state, ownProps) => {
   const { hash, fileName } = ownProps;
