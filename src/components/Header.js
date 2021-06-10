@@ -2,7 +2,6 @@ import { FormControlLabel, Switch } from "@material-ui/core/"
 import React, { useContext, useState, useEffect } from "react"
 import { repoName, userName, repo_link } from "../meta-data/repoSettings.json"
 
-import { Link } from "@reach/router"
 import { ThemeContext } from "../ThemeContext"
 import Typography from "@material-ui/core/Typography"
 import { AppBar, Toolbar, IconButton } from "@material-ui/core"
@@ -13,19 +12,6 @@ import Slide from "@material-ui/core/Slide"
 import useScrollTrigger from "@material-ui/core/useScrollTrigger"
 
 const githubUsersAPI = "https://api.github.com/users"
-
-// const searchByEmail = (email) => {
-//   const s = `https://api.github.com/search/users?q=${email}+in:email`
-//   return s
-// }
-
-// const githubUserEmailsAPI = `https://api.github.com/search/users?q=franky+in:email`
-
-const getGithubAPIUri = (userName) => {
-  const encoded = userName.replaceAll(" ", "+")
-  const uri = `https://api.github.com/search/users?q=&${encoded}+in:name`
-  return uri
-}
 
 const HideOnScroll = (props) => {
   const { children } = props
