@@ -26,4 +26,15 @@ const fetchRawGithubFile = (filePath, setText, setFileType) => {
     })
 }
 
-export default fetchRawGithubFile
+const getGithubAPIUri = (userName) => {
+  debugger
+  const encoded = userName.replaceAll(" ", "+")
+  const uri = `https://api.github.com/search/users?q=${encoded}+in:name`
+  return uri
+}
+
+const getGithubRepoAtThisPointLink = (hash) => {
+  return `https://github.com/barhoring/sick-fits-backend/tree/${hash}`
+}
+
+export { fetchRawGithubFile, getGithubAPIUri, getGithubRepoAtThisPointLink }

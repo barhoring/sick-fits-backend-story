@@ -13,6 +13,7 @@ const mapStateToProps = (state, ownProps) => {
     hash,
     commitGithubLink,
     authorName: data.authorName,
+    authorEmail: data.autherEmail, // yes it's a typo ignore pls
     filesAdded: data.filesAdded,
     filesModify: data.filesModify,
     filesDeleted: data.filesDeleted,

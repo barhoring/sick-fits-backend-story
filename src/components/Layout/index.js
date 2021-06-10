@@ -1,5 +1,5 @@
 import React from "react"
-import Header from "./Header"
+import { Header } from "../../components"
 import { CommitViewContainer } from "../../containers"
 import { Router } from "@reach/router"
 import { SettingsPage, About } from "../../pages"

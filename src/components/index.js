@@ -11,6 +11,8 @@ import GithubLink from "./GithubLink"
 import CommitView from "./CommitView"
 import Settings from "./Settings"
 import Chapter from "./Chapter"
+import Header from "./Header"
+import Commiter from "./Commiter"
 
 export {
   Commit,
@@ -26,4 +28,6 @@ export {
   CommitView,
   Settings,
   Chapter,
+  Header,
+  Commiter,
 }

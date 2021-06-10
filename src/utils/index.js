@@ -1,5 +1,15 @@
 import rTabs from "./rTabs"
 import file from "./file"
-import fetchRawGithubFile from "./helpers"
+import {
+  getGithubAPIUri,
+  fetchRawGithubFile,
+  getGithubRepoAtThisPointLink,
+} from "./helpers"
 
-export { rTabs, file, fetchRawGithubFile }
+export {
+  rTabs,
+  file,
+  fetchRawGithubFile,
+  getGithubAPIUri,
+  getGithubRepoAtThisPointLink,
+}

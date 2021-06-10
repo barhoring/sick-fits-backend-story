@@ -4,7 +4,6 @@ const settingsReducer = (state = defaultSettings, action) => {
   if (action.type === "SET_THEME") {
     const { theme } = action.payload
     return { ...state, theme }
-    // console.log("set theme");
   }
   if (action.type === "ADD_THEME") {
     const { theme } = action.payload
